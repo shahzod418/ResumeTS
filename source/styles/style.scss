@@ -1,0 +1,45 @@
+$accordion-button-bg: transparent;
+$accordion-button-active-bg: transparent;
+$accordion-button-color: white;
+$accordion-button-focus-box-shadow: none;
+
+@import "~bootstrap";
+
+body {
+  font-family: 'Play', sans-serif;
+}
+
+.bg-custom {
+  background-color: #0d1117;
+}
+
+#portfolio p {
+  background-color: #0d1117;
+  border-radius: 0.25rem;
+}
+
+#portfolio li {
+  background-color: #0d1117;
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+}
+
+section ::-webkit-scrollbar {
+  width: 1px;
+  border-radius: 0.25rem;
+}
