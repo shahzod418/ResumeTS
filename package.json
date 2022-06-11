@@ -5,7 +5,22 @@
   "private": "true",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md|html|svelte)\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged",
+        "npm run build"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": "npm run lint",
+    "*.+(js|jsx|svelte|json|css|md)": "npm run format"
   },
   "repository": {
     "type": "git",

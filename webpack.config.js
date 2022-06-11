@@ -2,15 +2,15 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: ['@babel/polyfill', "./source/index.tsx"],
+  mode: 'development',
+  entry: ['@babel/polyfill', './source/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: "[name].[hash].js",
+    filename: '[name].[hash].js',
   },
   devServer: {
     port: 8080,
@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./source/index.html",
+      template: './source/index.html',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
@@ -52,4 +52,4 @@ module.exports = {
       },
     ],
   },
-}
+};

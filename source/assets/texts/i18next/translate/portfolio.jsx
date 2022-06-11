@@ -25,7 +25,7 @@ export default {
     projects: [
       {
         id: 'resume',
-        title: 'portfolio.description.frontend.resume.title',
+        title: 'projects.description.frontend.resume.title',
         links: [
           {
             id: 'github',
@@ -35,8 +35,8 @@ export default {
           { id: 'website', name: 'Website', link: 'https://www.davlatov.space/' },
         ],
         gif: <LazyResumeGif />,
-        shortDescription: 'portfolio.description.frontend.resume.shortDescription',
-        stack: 'portfolio.description.frontend.resume.stack',
+        shortDescription: 'projects.description.frontend.resume.shortDescription',
+        stack: 'projects.description.frontend.resume.stack',
         description: {
           ru: (
             <div className="col-auto text-white" dangerouslySetInnerHTML={{ __html: ruResume }} />
@@ -48,7 +48,7 @@ export default {
       },
       {
         id: 'multilingualClicker',
-        title: 'portfolio.description.frontend.multilingualClicker.title',
+        title: 'projects.description.frontend.multilingualClicker.title',
         links: [
           {
             id: 'github',
@@ -58,8 +58,8 @@ export default {
           { id: 'website', name: 'Website', link: 'https://multilingual-clicker.vercel.app' },
         ],
         gif: <LazyMultilingualClickerGif />,
-        shortDescription: 'portfolio.description.frontend.multilingualClicker.shortDescription',
-        stack: 'portfolio.description.frontend.multilingualClicker.stack',
+        shortDescription: 'projects.description.frontend.multilingualClicker.shortDescription',
+        stack: 'projects.description.frontend.multilingualClicker.stack',
         description: {
           ru: (
             <div
@@ -77,14 +77,14 @@ export default {
       },
       {
         id: 'contractBuilder',
-        title: 'portfolio.description.frontend.contractBuilder.title',
+        title: 'projects.description.frontend.contractBuilder.title',
         links: [
           { id: 'github', name: 'Github', link: 'https://github.com/shahzod418/Contract-builder' },
           { id: 'website', name: 'Website', link: 'https://contract-builder.vercel.app' },
         ],
         gif: <LazyContractBuilderGif />,
-        shortDescription: 'portfolio.description.frontend.contractBuilder.shortDescription',
-        stack: 'portfolio.description.frontend.contractBuilder.stack',
+        shortDescription: 'projects.description.frontend.contractBuilder.shortDescription',
+        stack: 'projects.description.frontend.contractBuilder.stack',
         description: {
           ru: (
             <div
@@ -107,11 +107,11 @@ export default {
     projects: [
       {
         id: 'brainGame',
-        title: 'portfolio.description.backend.brainGame.title',
+        title: 'projects.description.backend.brainGame.title',
         links: [{ id: 'github', name: 'Github', link: 'https://github.com/shahzod418/Brain-game' }],
         gif: <LazyBrainGameGif />,
-        shortDescription: 'portfolio.description.backend.brainGame.shortDescription',
-        stack: 'portfolio.description.backend.brainGame.stack',
+        shortDescription: 'projects.description.backend.brainGame.shortDescription',
+        stack: 'projects.description.backend.brainGame.stack',
         description: {
           ru: (
             <div
@@ -134,7 +134,7 @@ export default {
     projects: [
       {
         id: 'cognitiveDistortions',
-        title: 'portfolio.description.layout.cognitiveDistortions.title',
+        title: 'projects.description.layout.cognitiveDistortions.title',
         links: [
           {
             id: 'github',
@@ -148,8 +148,8 @@ export default {
           },
         ],
         gif: <LazyCognitiveDistortionsGif />,
-        shortDescription: 'portfolio.description.layout.cognitiveDistortions.shortDescription',
-        stack: 'portfolio.description.layout.cognitiveDistortions.stack',
+        shortDescription: 'projects.description.layout.cognitiveDistortions.shortDescription',
+        stack: 'projects.description.layout.cognitiveDistortions.stack',
         description: {
           ru: (
             <div
@@ -167,7 +167,7 @@ export default {
       },
       {
         id: 'musicBox',
-        title: 'portfolio.description.layout.musicBox.title',
+        title: 'projects.description.layout.musicBox.title',
         links: [
           { id: 'github', name: 'Github', link: 'https://github.com/shahzod418/Music-box' },
           { id: 'main', name: 'Main', link: 'https://shahzod418.github.io/Music-box/index.html' },
@@ -178,8 +178,8 @@ export default {
           },
         ],
         gif: <LazyMusicBoxGif />,
-        shortDescription: 'portfolio.description.layout.musicBox.shortDescription',
-        stack: 'portfolio.description.layout.musicBox.stack',
+        shortDescription: 'projects.description.layout.musicBox.shortDescription',
+        stack: 'projects.description.layout.musicBox.stack',
         description: {
           ru: (
             <div className="col-auto text-white" dangerouslySetInnerHTML={{ __html: ruMusicBox }} />

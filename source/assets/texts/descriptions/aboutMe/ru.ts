@@ -1,13 +1,26 @@
-export default {
+import AboutMe from './interface';
+
+const myBirthday = new Date('2000-09-17');
+const currentAge = Math.floor((Date.now() - myBirthday.getTime()) / (24 * 3600 * 365.25 * 1000));
+
+const aboutMe: AboutMe = {
   nationality: {
     title: 'Гражданство',
     text: 'РФ',
   },
-  age: 'Возраст',
-  birthday: 'Дата рождения',
-  text:
+  age: {
+    title: 'Возраст',
+    text: currentAge,
+  },
+  birthday: {
+    title: 'Дата рождения',
+    text: myBirthday,
+  },
+  description:
     'Люблю программировать и осваивать новые технологии.\n' +
     'В свободное время читаю книги, в основном это проза и детективы.\n' +
     'Веду здоровый образ жизни, хожу в тренажёрный зал, гуляю по паркам.\n' +
     'Не имею вредных привычек, я не пью и не курю.',
 };
+
+export default aboutMe;

@@ -18,7 +18,7 @@ module.exports = {
     },
     {
       files: ['*.svelte'],
-      processor: 'svelte3/svelte3'
+      processor: 'svelte3/svelte3',
     },
   ],
   plugins: ['react', 'svelte3', '@typescript-eslint', 'prettier'],
@@ -42,5 +42,5 @@ module.exports = {
   },
   settings: {
     'svelte3/typescript': true,
-  }
+  },
 };

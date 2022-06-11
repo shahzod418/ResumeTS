@@ -1,7 +1,7 @@
-import skills from '../../descriptions/skills/ru';
-import aboutMe from '../../descriptions/aboutMe/ru';
-import education from '../../descriptions/education/ru';
-import portfolio from '../../descriptions/portfolio/ru';
+import skills from '../descriptions/skills/ru';
+import aboutMe from '../descriptions/aboutMe/ru';
+import education from '../descriptions/education/ru';
+import portfolio from '../descriptions/projects/ru';
 
 export default {
   translation: {

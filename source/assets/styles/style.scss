@@ -3,7 +3,7 @@ $accordion-button-active-bg: transparent;
 $accordion-button-color: white;
 $accordion-button-focus-box-shadow: none;
 
-@import "~bootstrap";
+@import "node_modules/bootstrap";
 
 body {
   font-family: 'Play', sans-serif;
