@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './assets/styles/style.scss';
+import "./i18n";
+import {useTranslation} from "react-i18next";
 
-const root = ReactDOM.createRoot(document.body);
-root.render(<h1 style={{ color: 'white', textAlign: 'center' }}>Test</h1>);
+const Test = () => {
+  const [t, i18n] = useTranslation();
 
-interface Test {
-  test: string;
-}
+  console.log(t('aboutMe.description', { returnObjects: true }))
+  i18n.changeLanguage('en')
+  console.log(t('aboutMe.description', { returnObjects: true }))
 
-const test: Test = {
-  test: '2',
+  return <div>Test</div>
 };
 
-console.log(test);
+const root = ReactDOM.createRoot(document.body);
+root.render(<div style={{ color: 'white', textAlign: 'center' }}>
+  <Test />
+</div>);

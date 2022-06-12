@@ -26,15 +26,18 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-typescript', '@babel/preset-react', '@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
           },
         },
       },
