@@ -1,5 +1,5 @@
-import React from "react";
-import Project from './interface';
+import React from 'react';
+import IProject from './IProject';
 import resume from '../../../markdown/en/resume.md';
 import multilingualClicker from '../../../markdown/en/multilingualClicker.md';
 import contractBuilder from '../../../markdown/en/contractBuilder.md';
@@ -7,7 +7,7 @@ import brainGame from '../../../markdown/en/brainGame.md';
 import cognitiveDistortions from '../../../markdown/en/cognitiveDistortions.md';
 import musicBox from '../../../markdown/en/musicBox.md';
 
-const projects: Project[] = [
+const projects: IProject[] = [
   {
     type: 'Frontend',
     projects: [

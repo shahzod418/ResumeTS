@@ -1,6 +1,6 @@
-import Education from './interface';
+import IEducation from './IEducation';
 
-const education: Education = {
+const education: IEducation = {
   higher: {
     title: 'Незаконченное высшее',
     universities: [

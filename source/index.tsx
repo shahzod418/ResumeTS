@@ -1,20 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './assets/styles/style.scss';
-import "./i18n";
-import {useTranslation} from "react-i18next";
+import './i18n';
+import App from './App';
 
-const Test = () => {
-  const [t, i18n] = useTranslation();
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-  console.log(t('aboutMe.description', { returnObjects: true }))
-  i18n.changeLanguage('en')
-  console.log(t('aboutMe.description', { returnObjects: true }))
-
-  return <div>Test</div>
-};
-
-const root = ReactDOM.createRoot(document.body);
-root.render(<div style={{ color: 'white', textAlign: 'center' }}>
-  <Test />
-</div>);
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+);

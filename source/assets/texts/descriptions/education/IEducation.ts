@@ -1,4 +1,4 @@
-export default interface Education {
+export default interface IEducation {
   higher: {
     title: string;
     universities: {

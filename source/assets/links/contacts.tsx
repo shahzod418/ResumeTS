@@ -1,4 +1,4 @@
-import React, {lazy, ReactElement} from 'react';
+import React, { lazy, ReactElement } from 'react';
 
 const TelegramIcon = lazy(() => import('react-bootstrap-icons/dist/icons/telegram'));
 const EnvelopeIcon = lazy(() => import('react-bootstrap-icons/dist/icons/envelope'));

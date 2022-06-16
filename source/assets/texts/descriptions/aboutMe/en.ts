@@ -1,9 +1,9 @@
-import AboutMe from './interface';
+import IAboutMe from './IAboutMe';
 
 const myBirthday = new Date('2000-09-17');
 const currentAge = Math.floor((Date.now() - myBirthday.getTime()) / (24 * 3600 * 365.25 * 1000));
 
-const aboutMe: AboutMe = {
+const aboutMe: IAboutMe = {
   nationality: {
     title: 'Citizenship',
     text: 'Russia',
@@ -14,7 +14,11 @@ const aboutMe: AboutMe = {
   },
   birthday: {
     title: 'Date of birth',
-    text: myBirthday,
+    text: myBirthday.toLocaleString('en', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }),
   },
   description:
     'I like programming and learning new technologies.\n' +

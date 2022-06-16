@@ -1,4 +1,4 @@
-export default interface AboutMe {
+export default interface IAboutMe {
   nationality: {
     title: string;
     text: string;
@@ -9,7 +9,7 @@ export default interface AboutMe {
   };
   birthday: {
     title: string;
-    text: Date;
+    text: string;
   };
   description: string;
 }

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export default interface Project {
+export default interface IProject {
   type: string;
   projects: {
     id: string;

@@ -1,6 +1,6 @@
-import Skill from './interface';
+import ISkill from './ISkill';
 
-const skills: Skill[] = [
+const skills: ISkill[] = [
   {
     title: 'JavaScript/TypeScript',
     list: ['React', 'Redux', 'Svelte'],
