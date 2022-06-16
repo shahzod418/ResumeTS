@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Language from './components/Buttons/Language/Language';
 import languages from './assets/languages/languages';
@@ -41,6 +41,7 @@ const App = () => {
            />
           <Route path="skills" element={<Joke />}/>
           <Route path="portfolio" element={<Joke />}/>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
       <Footer />
