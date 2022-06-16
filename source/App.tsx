@@ -8,6 +8,7 @@ import languages from './assets/languages/languages';
 import AboutMe from './components/AboutMe/AboutMe';
 import { useTranslation } from 'react-i18next';
 import Education from './components/Education/Education';
+import Joke from "./components/Joke/Joke";
 
 const App = () => {
   const { t } = useTranslation();
@@ -27,16 +28,19 @@ const App = () => {
                 data={t('aboutMe.description', { returnObjects: true })}
               />
             }
-          ></Route>
+          />
           <Route
             path="education"
             element={
-              <Education
-                title={t('education.title')}
-                data={t('education.description', { returnObjects: true })}
-              />
+            <Joke />
+              // <Education
+              //   title={t('education.title')}
+              //   data={t('education.description', { returnObjects: true })}
+              // />
             }
-          ></Route>
+           />
+          <Route path="skills" element={<Joke />}/>
+          <Route path="portfolio" element={<Joke />}/>
         </Routes>
       </div>
       <Footer />
