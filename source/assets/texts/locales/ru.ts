@@ -7,7 +7,7 @@ export default {
   translation: {
     header: {
       title: 'Давлатов Шахзод Рустамович',
-      caption: 'Junior Frontend Developer',
+      caption: 'Простота — залог надежности',
       download: 'Скачать резюме',
     },
     aboutMe: {
@@ -27,5 +27,6 @@ export default {
       description: education,
     },
     toast: 'Упс, что-то пошло не так',
+    canvas: 'Разделы',
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import author from '../../assets/links/author';
+import author from '../assets/links/author';
 
 const Footer = () => (
   <Container fluid className="ps-3 pt-1 pb-1 bg-black">

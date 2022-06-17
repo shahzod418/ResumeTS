@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import Popup from 'reactjs-popup';
 import { Spinner, Button } from 'react-bootstrap';
-import Clipboard from '../Clipboard/Clipboard';
+import Clipboard from '../Clipboard';
 
 const contentStyle = { background: '#212529', borderRadius: '0.25rem' };
 const arrowStyle = { color: '#212529' };
@@ -14,7 +14,7 @@ const Link = ({ link, lazy }) => (
   </Suspense>
 );
 
-const ContactPopup = ({ contact }) => {
+const Contact = ({ contact }) => {
   const { link, type, popup, lazy } = contact;
   return (
     <Popup
@@ -33,4 +33,4 @@ const ContactPopup = ({ contact }) => {
   );
 };
 
-export default ContactPopup;
+export default Contact;

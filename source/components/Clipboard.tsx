@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ClipboardButton from './ClipboardButton';
+import ClipboardButton from './Buttons/Clipboard';
 
 const Clipboard = ({ popup }) => {
   const [isCopy, setCopy] = useState(false);

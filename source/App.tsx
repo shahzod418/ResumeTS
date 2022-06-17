@@ -1,27 +1,27 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Navigation from './components/Navigation/Navigation';
+import Header from './page/Header';
+import Navigation from './page/Navigation';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
-import Language from './components/Buttons/Language/Language';
-import languages from './assets/languages/languages';
-import AboutMe from './components/AboutMe/AboutMe';
+import Footer from './page/Footer';
+import AboutMe from './page/AboutMe';
 import { useTranslation } from 'react-i18next';
-import Education from './components/Education/Education';
-import Joke from "./components/Joke/Joke";
+import Education from './page/Education';
+import Joke from './page/Joke';
+import TopPanel from './page/TopPanel';
 
 const App = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <Language languages={languages} />
+      <TopPanel />
       <Header />
       <Navigation />
-      <div className="pb-5 mb-5">
+      <div className="flex-grow-1">
         <Routes>
+          <Route path="/" element={<Navigate to='about' />}/>
           <Route
-            path="/"
+            path="about"
             element={
               <AboutMe
                 title={t('aboutMe.title')}
@@ -32,16 +32,15 @@ const App = () => {
           <Route
             path="education"
             element={
-            <Joke />
-              // <Education
-              //   title={t('education.title')}
-              //   data={t('education.description', { returnObjects: true })}
-              // />
+              <Education
+                title={t('education.title')}
+                data={t('education.description', { returnObjects: true })}
+              />
             }
-           />
-          <Route path="skills" element={<Joke />}/>
-          <Route path="portfolio" element={<Joke />}/>
-          <Route path="*" element={<Navigate to="/" replace />} />
+          />
+          <Route path="skills" element={<Joke title={t('toast')} />} />
+          <Route path="portfolio" element={<Joke title={t('toast')} />} />
+          <Route path="*" element={<Joke title={t('toast')} />} />
         </Routes>
       </div>
       <Footer />

@@ -1,13 +1,13 @@
 import React, { lazy, Suspense, useRef, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import PhotoSpinner from '../PhotoSpinner/PhotoSpinner';
-import Contacts from '../Contacts/Contacts';
-import contacts from '../../assets/links/contacts';
-import DownloadResume from '../Buttons/DownloadResume/DownloadResume';
+import PhotoSpinner from '../components/PhotoSpinner';
+import Contacts from '../components/Contacts';
+import contacts from '../assets/links/contacts';
+import DownloadResume from '../components/Buttons/DownloadResume';
 import NET from 'vanta/dist/vanta.net.min';
 
-const Photo = lazy(() => import('../Photo/Photo'));
+const Photo = lazy(() => import('../components/Photo'));
 
 const Header = () => {
   const { t } = useTranslation();
@@ -37,15 +37,15 @@ const Header = () => {
   }, [vantaEffect]);
 
   return (
-    <Container fluid ref={ref} className="p-5">
+    <Container fluid ref={ref} className="p-5 border-bottom">
       <Row className="justify-content-center">
         <Col
           lg={6}
           className="d-flex flex-column justify-content-center align-items-center align-items-lg-start"
         >
           <h1 className="text-center text-md-start">{t('header.title')}</h1>
-          <h3>{t('header.caption')}</h3>
-          <Contacts contacts={contacts} variant={'dark'} size={'lg'} />
+          <h6>{t('header.caption')}</h6>
+          <Contacts contacts={contacts} />
           <DownloadResume text={t('header.download')} />
         </Col>
         <Col lg={4}>

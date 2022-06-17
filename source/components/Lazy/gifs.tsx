@@ -1,11 +1,11 @@
 import React, { lazy, ReactElement } from 'react';
 
-const Resume = lazy(() => import('../components/Gifs/Resume'));
-const BrainGame = lazy(() => import('../components/Gifs/BrainGame'));
-const CognitiveDistortions = lazy(() => import('../components/Gifs/CognitiveDistortions'));
-const ContractBuilder = lazy(() => import('../components/Gifs/ContractBuilder'));
-const MultilingualClicker = lazy(() => import('../components/Gifs/MultilingualClicker'));
-const MusicBox = lazy(() => import('../components/Gifs/MusicBox'));
+const Resume = lazy(() => import('../Gifs/Resume'));
+const BrainGame = lazy(() => import('../Gifs/BrainGame'));
+const CognitiveDistortions = lazy(() => import('../Gifs/CognitiveDistortions'));
+const ContractBuilder = lazy(() => import('../Gifs/ContractBuilder'));
+const MultilingualClicker = lazy(() => import('../Gifs/MultilingualClicker'));
+const MusicBox = lazy(() => import('../Gifs/MusicBox'));
 
 export interface Gif {
   id: string;

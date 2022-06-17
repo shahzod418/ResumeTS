@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import AboutMeTable from './AboutMeTable';
+import AboutMeTable from '../components/AboutMeTable';
 
 const AboutMe = ({ title, data }) => {
   const { description } = data;
@@ -8,7 +8,7 @@ const AboutMe = ({ title, data }) => {
   return (
     <Container className="p-5">
       <Row>
-        <h2 className="d-none">{title}</h2>
+        <h2 className="d-block d-sm-none mb-3">{title}</h2>
       </Row>
       <Row>
         <Col lg={4}>

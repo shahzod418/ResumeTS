@@ -7,7 +7,7 @@ export default {
   translation: {
     header: {
       title: 'Davlatov Shahzod',
-      caption: 'Junior Frontend Developer',
+      caption: 'Simplicity is prerequisite for reliability',
       download: 'Download CV',
     },
     aboutMe: {
@@ -27,5 +27,6 @@ export default {
       description: education,
     },
     toast: 'Oops, something went wrong',
+    canvas: 'Sections',
   },
 };

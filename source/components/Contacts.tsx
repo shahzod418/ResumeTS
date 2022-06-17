@@ -1,10 +1,10 @@
 import React from 'react';
-import ContactPopup from './ContactPopup';
+import Contact from './Popups/Contact';
 
 const Contacts = ({ contacts }) => (
   <div className="d-flex">
     {contacts.map((contact) => (
-      <ContactPopup key={contact.type} contact={contact} />
+      <Contact key={contact.type} contact={contact} />
     ))}
   </div>
 );

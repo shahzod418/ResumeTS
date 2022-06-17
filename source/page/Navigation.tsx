@@ -7,10 +7,10 @@ const Navigation = () => {
   const { t } = useTranslation();
 
   return (
-    <Nav fill variant="tabs" defaultActiveKey="/">
+    <Nav justify variant="tabs" className="d-none d-sm-flex">
       <Nav.Item>
-        <LinkContainer to="/">
-          <Nav.Link eventKey="/">{t('aboutMe.title')}</Nav.Link>
+        <LinkContainer to="about">
+          <Nav.Link eventKey="/about">{t('aboutMe.title')}</Nav.Link>
         </LinkContainer>
       </Nav.Item>
       <Nav.Item>

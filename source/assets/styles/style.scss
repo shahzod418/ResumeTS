@@ -27,19 +27,7 @@ body {
   width: 0;
 }
 
-::-webkit-scrollbar-button {
-  width: 0;
-}
-
-::-webkit-scrollbar-track {
-  width: 0;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: $primary;
-}
-
-section ::-webkit-scrollbar {
-  width: 1px;
-  border-radius: 0.25rem;
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
