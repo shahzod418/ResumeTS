@@ -1,7 +1,7 @@
 import skills from '../descriptions/skills/en';
 import aboutMe from '../descriptions/aboutMe/en';
 import education from '../descriptions/education/en';
-import portfolio from '../descriptions/projects/en';
+import projects from '../descriptions/projects/en';
 
 export default {
   translation: {
@@ -18,9 +18,9 @@ export default {
       title: 'Skills',
       description: skills,
     },
-    portfolio: {
-      title: 'Portfolio',
-      description: portfolio,
+    projects: {
+      title: 'Projects',
+      description: projects,
     },
     education: {
       title: 'Education',

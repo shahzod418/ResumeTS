@@ -5,14 +5,14 @@ const EnvelopeIcon = lazy(() => import('react-bootstrap-icons/dist/icons/envelop
 const PhoneIcon = lazy(() => import('react-bootstrap-icons/dist/icons/phone'));
 const GithubIcon = lazy(() => import('react-bootstrap-icons/dist/icons/github'));
 
-export interface Contact {
+export interface IContact {
   type: string;
   link: string;
   popup: string;
   lazy: ReactElement;
 }
 
-const contacts: Contact[] = [
+const contacts: IContact[] = [
   {
     type: 'telegram',
     link: 'https://t.me/shahzod418',

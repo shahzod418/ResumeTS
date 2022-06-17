@@ -1,4 +1,3 @@
-import React from 'react';
 import IProject from './IProject';
 import resume from '../../../markdown/en/resume.md';
 import multilingualClicker from '../../../markdown/en/multilingualClicker.md';
@@ -18,9 +17,7 @@ const projects: IProject[] = [
           'My summary, written using React and Svelte frameworks. Executed in two versions, in Russian and English',
         stack:
           'Technology Stack: React, React Hooks, Svelte, i18nex, html2pdf.js, vanta.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
-        description: (
-          <div className="col-auto text-white" dangerouslySetInnerHTML={{ __html: resume }} />
-        ),
+        description: resume,
       },
       {
         id: 'multilingualClicker',
@@ -29,12 +26,7 @@ const projects: IProject[] = [
           'Frontend application written in pure JavaScript using the i18next internationalisation library',
         stack:
           'Technology Stack: JavaScript, i18next, Yup, onChange, Lodash, Bootstrap, Webpack, Babel, PostCSS, Vercel, ESLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
-        description: (
-          <div
-            className="col-auto text-white"
-            dangerouslySetInnerHTML={{ __html: multilingualClicker }}
-          />
-        ),
+        description: multilingualClicker,
       },
       {
         id: 'contractBuilder',
@@ -42,12 +34,7 @@ const projects: IProject[] = [
         shortDescription: 'Frontend application on Svelte framework',
         stack:
           'Technology Stack: Svelte, JavaScript, Bootstrap, Webpack, Babel, PostCSS, Vercel, Prettier, Git, GitHub',
-        description: (
-          <div
-            className="col-auto text-white"
-            dangerouslySetInnerHTML={{ __html: contractBuilder }}
-          />
-        ),
+        description: contractBuilder,
       },
     ],
   },
@@ -61,9 +48,7 @@ const projects: IProject[] = [
           'An CLI application written in TypeScript using the Node.JS module Commander.JS and the readline-sync console library',
         stack:
           'Technology Stack: TypeScript, Node.js, Commander.JS, Jest, npm, ESLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
-        description: (
-          <div className="col-auto text-white" dangerouslySetInnerHTML={{ __html: brainGame }} />
-        ),
+        description: brainGame,
       },
     ],
   },
@@ -75,12 +60,7 @@ const projects: IProject[] = [
         title: 'Music Box',
         shortDescription: 'Music Box website layout',
         stack: 'Technology Stack: HTML, CSS, Flex, Grid, SASS, npm, Git, Surge',
-        description: (
-          <div
-            className="col-auto text-white"
-            dangerouslySetInnerHTML={{ __html: cognitiveDistortions }}
-          />
-        ),
+        description: cognitiveDistortions,
       },
       {
         id: 'musicBox',
@@ -88,9 +68,7 @@ const projects: IProject[] = [
         shortDescription: "Landing on 'Cognitive Distortions in Programming'",
         stack:
           'Technology Stack: HTML, CSS, Flex, CSS Animation, CSS Transform, JavaScript (DOM API), npm, Git',
-        description: (
-          <div className="col-auto text-white" dangerouslySetInnerHTML={{ __html: musicBox }} />
-        ),
+        description: musicBox,
       },
     ],
   },

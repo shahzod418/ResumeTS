@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 export default interface IProject {
   type: string;
   projects: {
@@ -7,6 +5,6 @@ export default interface IProject {
     title: string;
     shortDescription: string;
     stack: string;
-    description: ReactElement;
+    description: HTMLElement;
   }[];
 }

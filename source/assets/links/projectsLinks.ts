@@ -1,4 +1,4 @@
-export interface ProjectLink {
+export interface IProjectLink {
   id: string;
   links: {
     id: string;
@@ -7,7 +7,7 @@ export interface ProjectLink {
   }[];
 }
 
-const projectsLinks: ProjectLink[] = [
+const projectsLinks: IProjectLink[] = [
   {
     id: 'resume',
     links: [

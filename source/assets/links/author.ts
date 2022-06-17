@@ -1,9 +1,9 @@
-export interface Author {
+export interface IAuthor {
   name: string;
   link: string;
 }
 
-const author: Author = {
+const author: IAuthor = {
   name: 'Davlatov Shahzod',
   link: 'https://github.com/shahzod418',
 };

@@ -37,8 +37,8 @@ const NavOffCanvas = () => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Nav.Item>
-                  <LinkContainer to="portfolio">
-                    <Nav.Link eventKey="/portfolio">{t('portfolio.title')}</Nav.Link>
+                  <LinkContainer to="projects">
+                    <Nav.Link eventKey="/projects">{t('projects.title')}</Nav.Link>
                   </LinkContainer>
                 </Nav.Item>
               </ListGroup.Item>

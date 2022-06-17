@@ -1,12 +1,12 @@
 import skills from '../descriptions/skills/ru';
 import aboutMe from '../descriptions/aboutMe/ru';
 import education from '../descriptions/education/ru';
-import portfolio from '../descriptions/projects/ru';
+import projects from '../descriptions/projects/ru';
 
 export default {
   translation: {
     header: {
-      title: 'Давлатов Шахзод Рустамович',
+      title: 'Давлатов Шахзод',
       caption: 'Простота — залог надежности',
       download: 'Скачать резюме',
     },
@@ -18,9 +18,9 @@ export default {
       title: 'Навыки',
       description: skills,
     },
-    portfolio: {
-      title: 'Портфолио',
-      description: portfolio,
+    projects: {
+      title: 'Проекты',
+      description: projects,
     },
     education: {
       title: 'Образование',

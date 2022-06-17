@@ -40,7 +40,7 @@ const Header = () => {
     <Container fluid ref={ref} className="p-5 border-bottom">
       <Row className="justify-content-center">
         <Col
-          lg={6}
+          lg={5}
           className="d-flex flex-column justify-content-center align-items-center align-items-lg-start"
         >
           <h1 className="text-center text-md-start">{t('header.title')}</h1>
@@ -48,7 +48,7 @@ const Header = () => {
           <Contacts contacts={contacts} />
           <DownloadResume text={t('header.download')} />
         </Col>
-        <Col lg={4}>
+        <Col lg={3}>
           <Suspense fallback={<PhotoSpinner />}>
             <Photo />
           </Suspense>
