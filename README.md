@@ -2,8 +2,8 @@
 
 # О проекте
 
-[![eslint-test](https://github.com/shahzod418/Resume/actions/workflows/eslint-test.yml/badge.svg?branch=main)](https://github.com/shahzod418/Resume/actions/workflows/eslint-test.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/6d1e6989235d0bd97251/maintainability)](https://codeclimate.com/github/shahzod418/Resume/maintainability)
+[![eslint-test](https://github.com/shahzod418/ResumeTS/actions/workflows/eslint-test.yml/badge.svg)](https://github.com/shahzod418/ResumeTS/actions/workflows/eslint-test.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b6b63ede154cda9cda30/maintainability)](https://codeclimate.com/github/shahzod418/ResumeTS/maintainability)
 
 Моё резюме, написанное с использованием фреймворков React и Svelte на TypeScript. Исполнено в двух версиях, на русском и английском языке.
 

@@ -14,9 +14,9 @@ const projects: IProject[] = [
         id: 'resume',
         title: 'CV',
         shortDescription:
-          'My summary, written using React and Svelte frameworks. Executed in two versions, in Russian and English',
+          'My CV, written using the React and Svelte frameworks in TypeScript. Executed in two versions, in Russian and English',
         stack:
-          'Technology Stack: React, React Hooks, Svelte, i18nex, html2pdf.js, vanta.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
+          'Technology Stack: React, React Hooks, Svelte, i18next, html2pdf.js, vanta.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
         description: resume,
       },
       {
