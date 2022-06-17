@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import AboutMe from '../page/AboutMe';
 import Education from '../page/Education';
 import Skills from '../page/Skills';
 import Projects from '../page/Projects';
 import Joke from '../page/Joke';
-import React from 'react';
 
 const Routing = () => {
   const { t } = useTranslation();
@@ -35,7 +35,7 @@ const Routing = () => {
         path="skills"
         element={
           <Skills
-            title={t('skills.title')}
+            header={t('skills.title')}
             skills={t('skills.description', { returnObjects: true })}
           />
         }

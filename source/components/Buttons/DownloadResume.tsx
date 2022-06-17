@@ -1,12 +1,8 @@
-import React, { Suspense, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
+import React from 'react';
+import useDownloadResume from '../../hooks/useDownloadResume';
 
 const DownloadResume = ({ text }) => {
-  const [isDownload, setIsDownload] = useState(false);
-
-  const handleDownload = () => {
-    setIsDownload(true);
-  };
+  const { isDownload, handleDownload } = useDownloadResume();
 
   return (
     <button
@@ -17,11 +13,7 @@ const DownloadResume = ({ text }) => {
     >
       <span className="d-inline-block rounded-3">
         {text}
-        {isDownload && (
-          <Suspense fallback={<Spinner animation="border" size="sm" />}>
-            <div id="download-resume"></div>
-          </Suspense>
-        )}
+        {isDownload && <div id="download-resume" />}
       </span>
     </button>
   );

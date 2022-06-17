@@ -1,11 +1,11 @@
 import React from 'react';
 import { Col, Container, ListGroup, Row, Tab, Tabs } from 'react-bootstrap';
 
-const Skills = ({ title, skills }) => {
+const Skills = ({ header, skills }) => {
   return (
     <Container className="p-5">
       <Row>
-        <h2 className="d-block d-sm-none mb-3">{title}</h2>
+        <h2 className="d-block d-sm-none mb-3">{header}</h2>
       </Row>
       <Row>
         <Tabs variant="pills" defaultActiveKey={skills[0].title} id="tab-skills" className="mb-3">

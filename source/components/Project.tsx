@@ -29,11 +29,7 @@ const Project = ({ project }) => {
           <div className="position-relative" style={{ width: 'auto', height: 'auto' }}>
             <Suspense
               fallback={
-                <Spinner
-                  animation="border"
-                  variant="light"
-                  className="position-absolute start-50"
-                />
+                <Spinner animation="border" variant="dark" className="position-absolute start-50" />
               }
             >
               {gif}

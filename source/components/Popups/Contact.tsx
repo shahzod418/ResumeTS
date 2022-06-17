@@ -8,7 +8,7 @@ const arrowStyle = { color: '#212529' };
 
 const Link = ({ link, lazy }) => (
   <Suspense fallback={<Spinner animation="border" size="sm" variant="dark" />}>
-    <a href={link} target="_blank" className={`text-black`} rel="noreferrer">
+    <a href={link} target="_blank" className="text-black" rel="noreferrer">
       {lazy}
     </a>
   </Suspense>

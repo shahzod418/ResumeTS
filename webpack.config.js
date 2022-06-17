@@ -54,6 +54,10 @@ module.exports = {
         test: /\.md$/,
         use: ['html-loader', 'markdown-loader'],
       },
+      {
+        test: /\.svelte$/,
+        use: ['svelte-loader'],
+      },
     ],
   },
 };

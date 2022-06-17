@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ListGroup, Nav, Offcanvas } from 'react-bootstrap';
-import NavOffCanvasButton from './Buttons/NavOffCanvas';
 import { useTranslation } from 'react-i18next';
 import { LinkContainer } from 'react-router-bootstrap';
+import NavOffCanvasButton from './Buttons/NavOffCanvas';
 
 const NavOffCanvas = () => {
   const [show, setShow] = useState(false);
@@ -14,7 +14,7 @@ const NavOffCanvas = () => {
   return (
     <>
       <NavOffCanvasButton handleShow={handleShow} />
-      <Offcanvas show={show} onHide={handleClose} placement="end" scroll={true} backdrop={true}>
+      <Offcanvas show={show} onHide={handleClose} placement="end" scroll backdrop>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{t('canvas')}</Offcanvas.Title>
         </Offcanvas.Header>

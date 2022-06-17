@@ -1,11 +1,11 @@
 import React, { lazy, Suspense, useRef, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import NET from 'vanta/dist/vanta.net.min';
 import PhotoSpinner from '../components/PhotoSpinner';
 import Contacts from '../components/Contacts';
 import contacts from '../assets/links/contacts';
 import DownloadResume from '../components/Buttons/DownloadResume';
-import NET from 'vanta/dist/vanta.net.min';
 
 const Photo = lazy(() => import('../components/Photo'));
 
