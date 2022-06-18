@@ -8,7 +8,7 @@ const useSwipe = () => {
   let touchEnd = 0;
 
   const checkDirection = () => {
-    if (touchStart > touchEnd) {
+    if (touchStart - touchEnd > 200) {
       setIsSwipe(true);
     }
     touchStart = 0;
