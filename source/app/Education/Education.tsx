@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import Higher from './components/Higher';
-import Additional from './components/Additional';
+import Higher from './components/Higher/Higher';
+import Additional from './components/Additional/Additional';
 
-const Education = ({ title, data }) => {
-  const { higher, additional } = data;
+const Education = ({ title, info }) => {
+  const { higher, additional } = info;
 
   return (
     <Container className="p-5">

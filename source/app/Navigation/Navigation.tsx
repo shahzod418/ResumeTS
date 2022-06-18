@@ -10,7 +10,7 @@ const Navigation = () => {
     <Nav justify variant="tabs" className="d-none d-sm-flex">
       <Nav.Item>
         <LinkContainer to="about">
-          <Nav.Link eventKey="/about">{t('aboutMe.title')}</Nav.Link>
+          <Nav.Link eventKey="/about">{t('about.title')}</Nav.Link>
         </LinkContainer>
       </Nav.Item>
       <Nav.Item>

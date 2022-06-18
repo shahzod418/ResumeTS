@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import AboutMe from '../AboutMe/AboutMe';
+import About from '../About/About';
 import Education from '../Education/Education';
 import Skills from '../Skills/Skills';
 import Projects from '../Projects/Projects';
@@ -16,10 +16,7 @@ const Routing = () => {
       <Route
         path="about"
         element={
-          <AboutMe
-            title={t('aboutMe.title')}
-            data={t('aboutMe.description', { returnObjects: true })}
-          />
+          <About title={t('about.title')} info={t('about.description', { returnObjects: true })} />
         }
       />
       <Route
@@ -27,7 +24,7 @@ const Routing = () => {
         element={
           <Education
             title={t('education.title')}
-            data={t('education.description', { returnObjects: true })}
+            info={t('education.description', { returnObjects: true })}
           />
         }
       />
@@ -45,7 +42,7 @@ const Routing = () => {
         element={
           <Projects
             title={t('projects.title')}
-            data={t('projects.description', { returnObjects: true })}
+            info={t('projects.description', { returnObjects: true })}
           />
         }
       />

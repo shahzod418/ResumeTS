@@ -1,11 +1,11 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-const AboutMeTable = ({ data }) => {
-  const { nationality, age, birthday } = data;
+const AboutMeTable = ({ info }) => {
+  const { nationality, age, birthday } = info;
 
   return (
-    <Table responsive variant="transparent">
+    <Table responsive>
       <tbody>
         <tr>
           <td>{nationality.title}</td>

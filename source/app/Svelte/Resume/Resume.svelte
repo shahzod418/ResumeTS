@@ -1,13 +1,13 @@
 <script>
-  import i18n from '../../../i18n';
-  import AboutMe from './components/AboutMe.svelte';
+  import i18n from 'i18next';
+  import About from './components/About.svelte';
   import Skills from './components/Skills.svelte';
   import Projects from './components/Projects.svelte';
   import Education from './components/Education.svelte';
   import { onMount } from 'svelte';
   import Html2Pdf from 'html2pdf.js';
 
-  const about = i18n.t('aboutMe.description', { returnObjects: true });
+  const about = i18n.t('about.description', { returnObjects: true });
   const skills = i18n.t('skills.description', { returnObjects: true });
   const projects = i18n.t('projects.description', { returnObjects: true });
   const education = i18n.t('education.description', { returnObjects: true });
@@ -49,11 +49,11 @@
   </div>
   <div class="row">
     <div class="col">
-      <h3>{i18n.t('aboutMe.title')}</h3>
+      <h3>{i18n.t('about.title')}</h3>
     </div>
   </div>
   <div class="row mb-1 p-2">
-    <AboutMe {about} />
+    <About {about} />
   </div>
   <div class="row">
     <div class="col">

@@ -2,10 +2,10 @@ import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import Language from './components/Language';
 import languages from '../../../_data/languages';
-import NavOffCanvas from './components/NavOffCanvas';
+import NavOffCanvas from './components/NavOffCanvas/NavOffCanvas';
 import useDevice from '../../hooks/useDevice';
 
-const TopPanel = () => {
+const TopPanel = ({ pages }) => {
   const { isMobile } = useDevice();
 
   return (
@@ -18,7 +18,7 @@ const TopPanel = () => {
         <Navbar.Brand>Frontend Developer CV</Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
           <Language languages={languages} />
-          {isMobile && <NavOffCanvas />}
+          {isMobile && <NavOffCanvas pages={pages} />}
         </Navbar.Collapse>
       </Container>
     </Navbar>

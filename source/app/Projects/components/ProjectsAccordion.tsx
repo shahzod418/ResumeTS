@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Accordion } from 'react-bootstrap';
-import Project from './Project';
+import Project from './Project/Project';
 
 const ProjectsAccordion = ({ projects }) => {
   const [activeItem, setActiveItem] = useState(projects[0].id);

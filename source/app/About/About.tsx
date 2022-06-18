@@ -2,8 +2,8 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import AboutMeTable from './components/AboutMeTable';
 
-const AboutMe = ({ title, data }) => {
-  const { description } = data;
+const About = ({ title, info }) => {
+  const { description } = info;
 
   return (
     <Container className="p-5">
@@ -12,7 +12,7 @@ const AboutMe = ({ title, data }) => {
       </Row>
       <Row>
         <Col lg={4}>
-          <AboutMeTable data={data} />
+          <AboutMeTable info={info} />
         </Col>
         <Col lg={7} className="align-self-center">
           {description.split('\n').map((text: string, id: number) => (
@@ -26,4 +26,4 @@ const AboutMe = ({ title, data }) => {
   );
 };
 
-export default AboutMe;
+export default About;

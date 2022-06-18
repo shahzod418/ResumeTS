@@ -1,8 +1,9 @@
-import React, { Suspense } from 'react';
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
-import Link from './Link';
-import getLinks from '../../../api/getLinks';
-import getGif from '../../../api/getGif';
+import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import Link from './components/Link';
+import getLinks from '../../../../api/getLinks';
+import getGif from '../../../../api/getGif';
+import Gif from './components/Gif';
 
 const Project = ({ project }) => {
   const { id, title, shortDescription, stack, description } = project;
@@ -26,15 +27,7 @@ const Project = ({ project }) => {
           </p>
         </Col>
         <Col lg={7}>
-          <div className="position-relative" style={{ width: 'auto', height: 'auto' }}>
-            <Suspense
-              fallback={
-                <Spinner animation="border" variant="dark" className="position-absolute start-50" />
-              }
-            >
-              {gif}
-            </Suspense>
-          </div>
+          <Gif gif={gif} />
         </Col>
       </Row>
       <Row>

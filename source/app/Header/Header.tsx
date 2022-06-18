@@ -2,14 +2,13 @@ import React, { lazy, Suspense, useRef, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import NET from 'vanta/dist/vanta.net.min';
-import PhotoSpinner from './components/PhotoSpinner';
-import Contacts from './components/Contacts';
-import contacts from '../../../_data/contacts';
+import PhotoSpinner from './components/Photo/components/PhotoSpinner';
+import Contacts from './components/Contacts/Contacts';
 import DownloadResume from './components/DownloadResume';
 
-const Photo = lazy(() => import('./components/Photo'));
+const Photo = lazy(() => import('./components/Photo/Photo'));
 
-const Header = () => {
+const Header = ({ contacts, photos }) => {
   const { t } = useTranslation();
   const ref = useRef(null);
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -50,7 +49,7 @@ const Header = () => {
         </Col>
         <Col lg={3}>
           <Suspense fallback={<PhotoSpinner />}>
-            <Photo />
+            <Photo photos={photos} />
           </Suspense>
         </Col>
       </Row>

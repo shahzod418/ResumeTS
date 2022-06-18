@@ -1,5 +1,5 @@
 import skills from './ru/skills';
-import aboutMe from './ru/aboutMe';
+import about from './ru/about';
 import education from './ru/education';
 import projects from './ru/projects';
 
@@ -10,9 +10,9 @@ export default {
       caption: 'Простота — залог надежности',
       download: 'Скачать резюме',
     },
-    aboutMe: {
+    about: {
       title: 'Обо мне',
-      description: aboutMe,
+      description: about,
     },
     skills: {
       title: 'Навыки',

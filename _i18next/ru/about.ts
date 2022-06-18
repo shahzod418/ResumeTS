@@ -3,7 +3,7 @@ import IAboutMe from '../../source/Interfaces/IAboutMe';
 const myBirthday = new Date('2000-09-17');
 const currentAge = Math.floor((Date.now() - myBirthday.getTime()) / (24 * 3600 * 365.25 * 1000));
 
-const aboutMe: IAboutMe = {
+const about: IAboutMe = {
   nationality: {
     title: 'Гражданство',
     text: 'РФ',
@@ -27,4 +27,4 @@ const aboutMe: IAboutMe = {
     'Не имею вредных привычек, я не пью и не курю.',
 };
 
-export default aboutMe;
+export default about;

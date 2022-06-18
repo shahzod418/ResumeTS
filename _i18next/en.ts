@@ -1,5 +1,5 @@
 import skills from './en/skills';
-import aboutMe from './en/aboutMe';
+import about from './en/about';
 import education from './en/education';
 import projects from './en/projects';
 
@@ -10,9 +10,9 @@ export default {
       caption: 'Simplicity is prerequisite for reliability',
       download: 'Download CV',
     },
-    aboutMe: {
+    about: {
       title: 'About me',
-      description: aboutMe,
+      description: about,
     },
     skills: {
       title: 'Skills',
