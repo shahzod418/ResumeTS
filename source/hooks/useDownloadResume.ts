@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import Download from '../components/Svelte/Download.svelte';
+import Download from '../app/Svelte/Download.svelte';
 
 const useDownloadResume = () => {
   const [isDownload, setIsDownload] = useState(false);
