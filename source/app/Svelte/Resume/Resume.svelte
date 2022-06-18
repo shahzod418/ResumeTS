@@ -1,14 +1,43 @@
 <script>
-  import i18n from '../../i18n';
-  import AboutMe from './AboutMe.svelte';
-  import Skills from './Skills.svelte';
-  import Projects from './Projects.svelte';
-  import Education from './Education.svelte';
+  import i18n from '../../../i18n';
+  import AboutMe from './components/AboutMe.svelte';
+  import Skills from './components/Skills.svelte';
+  import Projects from './components/Projects.svelte';
+  import Education from './components/Education.svelte';
+  import { onMount } from 'svelte';
+  import Html2Pdf from 'html2pdf.js';
 
   const about = i18n.t('aboutMe.description', { returnObjects: true });
   const skills = i18n.t('skills.description', { returnObjects: true });
   const projects = i18n.t('projects.description', { returnObjects: true });
   const education = i18n.t('education.description', { returnObjects: true });
+
+  onMount(() => {
+    const options = {
+      margin: [0, 0, 10, 5],
+      filename: `Davlatov_CV.pdf`,
+      html2canvas: {
+        scale: 2,
+        logging: false,
+        dpi: 192,
+        letterRendering: true,
+      },
+      pageBreaks: {
+        mode: ['css', 'legacy'],
+        before: ['*'],
+        after: ['*'],
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    };
+
+    const source = document.querySelector('#download-resume');
+
+    const exporter = new Html2Pdf(source, options);
+
+    exporter.then((pdf) => {
+      pdf.save();
+    });
+  });
 </script>
 
 <div class="container p-5">

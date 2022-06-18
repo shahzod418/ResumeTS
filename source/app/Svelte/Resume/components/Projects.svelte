@@ -1,4 +1,6 @@
 <script>
+  import Link from './Link.svelte';
+
   export let drafts;
 </script>
 
@@ -8,14 +10,10 @@
       <h4>{draft.type}</h4>
     </div>
     <div class="row mb-1 p-1">
-      {#each draft.projects as { id, title, shortDescription, stack, links }}
+      {#each draft.projects as { id, title, shortDescription, stack }}
         <div class="col-12 mb-1">
           <h5>{title}</h5>
-          <div class="p-1">
-            {#each links as { name, link }}
-              <p class="small text-muted">{`${name}: ${link}`}</p>
-            {/each}
-          </div>
+          <Link {id} />
           <p>{shortDescription}</p>
           {#if id === 'resume' || id === 'brainGame' || id === 'cognitiveDistortions'}
             <p class="html2pdf__page-break mb-5"><i>{stack}</i></p>

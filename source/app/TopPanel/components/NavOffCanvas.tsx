@@ -1,9 +1,10 @@
-import React from 'react';
-import { ListGroup, Nav, Offcanvas } from 'react-bootstrap';
+import React, { lazy, Suspense } from 'react';
+import { Button, ListGroup, Nav, Offcanvas, Spinner } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { LinkContainer } from 'react-router-bootstrap';
-import NavOffCanvasButton from './NavOffCanvasButton';
 import useShowCanvas from '../../../hooks/useShowCanvas';
+
+const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/list'));
 
 const NavOffCanvas = () => {
   const { show, handleShow, handleClose } = useShowCanvas();
@@ -11,7 +12,11 @@ const NavOffCanvas = () => {
 
   return (
     <>
-      <NavOffCanvasButton handleShow={handleShow} />
+      <Button variant="outline-light" active={show} onClick={handleShow} className="ms-3">
+        <Suspense fallback={<Spinner animation="border" size="sm" />}>
+          <Icon />
+        </Suspense>
+      </Button>
       <Offcanvas show={show} onHide={handleClose} placement="end" scroll backdrop>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{t('canvas')}</Offcanvas.Title>

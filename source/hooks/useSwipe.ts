@@ -11,6 +11,7 @@ const useSwipe = () => {
     if (touchStart - touchEnd > 200) {
       setIsSwipe(true);
     }
+
     touchStart = 0;
     touchEnd = 0;
   };
