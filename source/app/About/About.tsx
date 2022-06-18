@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import AboutMeTable from './components/AboutMeTable';
+import AboutTable from './components/AboutTable';
 
 const About = ({ title, info }) => {
   const { description } = info;
@@ -12,7 +12,7 @@ const About = ({ title, info }) => {
       </Row>
       <Row>
         <Col lg={4}>
-          <AboutMeTable info={info} />
+          <AboutTable info={info} />
         </Col>
         <Col lg={7} className="align-self-center">
           {description.split('\n').map((text: string, id: number) => (

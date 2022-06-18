@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-const AboutMeTable = ({ info }) => {
+const AboutTable = ({ info }) => {
   const { nationality, age, birthday } = info;
 
   return (
@@ -24,4 +24,4 @@ const AboutMeTable = ({ info }) => {
   );
 };
 
-export default AboutMeTable;
+export default AboutTable;

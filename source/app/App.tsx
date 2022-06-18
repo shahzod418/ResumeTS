@@ -15,7 +15,7 @@ const App = () => {
     <>
       <TopPanel pages={pages} />
       <Header contacts={contacts} photos={[bar, elevator]} />
-      <Navigation />
+      <Navigation pages={pages} />
       <div className="flex-grow-1">
         <Routing />
       </div>
