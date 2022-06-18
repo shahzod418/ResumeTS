@@ -6,7 +6,11 @@ const ProjectsAccordion = ({ projects }) => {
   const [activeItem, setActiveItem] = useState(projects[0].id);
 
   const handleClick = (id) => () => {
-    setActiveItem(id);
+    if (activeItem === id) {
+      setActiveItem(null);
+    } else {
+      setActiveItem(id);
+    }
   };
 
   return (
