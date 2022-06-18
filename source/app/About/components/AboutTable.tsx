@@ -1,27 +1,23 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-const AboutTable = ({ info }) => {
-  const { nationality, age, birthday } = info;
+const AboutTable = ({ info }) => (
+  <Table responsive>
+    <tbody>
+      {Object.keys(info).map((key) => {
+        if (key !== 'description') {
+          return (
+            <tr>
+              <td>{info[key].title}</td>
+              <td>{info[key].text}</td>
+            </tr>
+          );
+        }
 
-  return (
-    <Table responsive>
-      <tbody>
-        <tr>
-          <td>{nationality.title}</td>
-          <td>{nationality.text}</td>
-        </tr>
-        <tr>
-          <td>{age.title}</td>
-          <td>{age.text}</td>
-        </tr>
-        <tr>
-          <td>{birthday.title}</td>
-          <td>{birthday.text}</td>
-        </tr>
-      </tbody>
-    </Table>
-  );
-};
+        return null;
+      })}
+    </tbody>
+  </Table>
+);
 
 export default AboutTable;
