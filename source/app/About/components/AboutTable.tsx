@@ -7,7 +7,7 @@ const AboutTable = ({ info }) => (
       {Object.keys(info).map((key) => {
         if (key !== 'description') {
           return (
-            <tr>
+            <tr key={key}>
               <td>{info[key].title}</td>
               <td>{info[key].text}</td>
             </tr>

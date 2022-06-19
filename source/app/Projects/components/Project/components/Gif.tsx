@@ -1,16 +1,15 @@
-import React, { Suspense } from 'react';
-import { Spinner } from 'react-bootstrap';
+import React from 'react';
+import { Col } from 'react-bootstrap';
+import LazyGif from '../../../../../hoсs/LazyGif';
 
-const Gif = ({ gif }) => (
-  <div className="position-relative" style={{ width: 'auto', height: 'auto' }}>
-    <Suspense
-      fallback={
-        <Spinner animation="border" variant="dark" className="position-absolute start-50" />
-      }
-    >
-      {gif}
-    </Suspense>
-  </div>
-);
+const Gif = ({ id }) => {
+  return (
+    <Col lg={7}>
+      <div className="position-relative">
+        <LazyGif name={id} />
+      </div>
+    </Col>
+  );
+};
 
 export default Gif;

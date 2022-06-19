@@ -1,15 +1,13 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Link from './components/Link';
+import Links from './components/Links';
 import getLinks from '../../../../api/getLinks';
-import getGif from '../../../../api/getGif';
 import Gif from './components/Gif';
 
 const Project = ({ project }) => {
-  const { id, title, shortDescription, stack, description } = project;
+  const { title, shortDescription, stack, description } = project;
 
-  const links = getLinks(id);
-  const gif = getGif(id);
+  const links = getLinks(project.id);
 
   return (
     <Container className="p-3">
@@ -17,18 +15,12 @@ const Project = ({ project }) => {
         <Col lg={5}>
           <h3 className="mb-3">{title}</h3>
           <p>{shortDescription}</p>
-          <div className="d-flex flex-wrap">
-            {links?.map(({ id, name, link }) => (
-              <Link key={id} name={name} link={link} />
-            ))}
-          </div>
+          <Links links={links} />
           <p className="mt-3">
             <i>{stack}</i>
           </p>
         </Col>
-        <Col lg={7}>
-          <Gif gif={gif} />
-        </Col>
+        <Gif id={project.id} />
       </Row>
       <Row>
         <div dangerouslySetInnerHTML={{ __html: description }} />

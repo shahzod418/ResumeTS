@@ -17,7 +17,7 @@ const App = () => {
       <Header contacts={contacts} photos={[bar, elevator]} />
       <Navigation pages={pages} />
       <div className="flex-grow-1">
-        <Routing />
+        <Routing pages={pages} />
       </div>
       <Footer author={author} />
     </>
