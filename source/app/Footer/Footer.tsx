@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import classNames from 'classnames';
+import ThemeContext from '../../context/ThemeContext';
 
 const Footer = ({ author }) => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <Container fluid className="ps-3 pt-1 pb-1 bg-black">
+    <Container
+      fluid
+      className={classNames('ps-3', 'pt-1', 'pb-1', theme.class.footer)}
+      style={{ backgroundColor: theme.footer }}
+    >
       <Row className="align-items-center">
         <Col className="text-white text-center">
           <span>{`\u00A9 ${new Date().getFullYear()} `}</span>

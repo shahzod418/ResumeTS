@@ -1,3 +1,5 @@
+$accordion-button-bg: transparent;
+$accordion-button-active-bg: transparent;
 $accordion-button-focus-box-shadow: none;
 
 @import "../../node_modules/bootstrap";
@@ -6,13 +8,22 @@ body {
   font-family: 'Play', sans-serif;
 }
 
-.project-link a {
+#light .project-link a {
   color: $dark;
   text-decoration: none;
 }
 
-.project-link:hover a {
+#light .project-link:hover a {
   color: $light;
+}
+
+#dark .project-link a {
+  color: $light;
+  text-decoration: none;
+}
+
+#dark .project-link:hover a {
+  color: $dark;
 }
 
 .bg-custom {
@@ -26,4 +37,8 @@ body {
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+#dark .accordion-button[aria-expanded="false"] {
+  color: white;
 }

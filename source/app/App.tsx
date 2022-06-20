@@ -9,10 +9,14 @@ import contacts from '../../_data/contacts';
 import bar from '../../assets/images/F0A55220-F7D4-4964-8645-479CA10C3CD8_1_105_c.png';
 import elevator from '../../assets/images/3926DCAF-C0E0-44D9-85CC-7AB187A1D431_1_105_c.png';
 import pages from '../../_data/pages';
+import ThemeContext from '../context/ThemeContext';
+import useTheme from '../hooks/useTheme';
 
 const App = () => {
+  const { theme, changeTheme } = useTheme();
+
   return (
-    <>
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
       <TopPanel pages={pages} />
       <Header contacts={contacts} photos={[bar, elevator]} />
       <Navigation pages={pages} />
@@ -20,7 +24,7 @@ const App = () => {
         <Routing pages={pages} />
       </div>
       <Footer author={author} />
-    </>
+    </ThemeContext.Provider>
   );
 };
 

@@ -1,49 +1,31 @@
-import React, { lazy, Suspense, useRef, useState, useEffect } from 'react';
+import React, { lazy, Suspense, useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import NET from 'vanta/dist/vanta.net.min';
+import classNames from 'classnames';
 import PhotoSpinner from './components/Photo/components/PhotoSpinner';
 import Contacts from './components/Contacts/Contacts';
 import DownloadResume from './components/DownloadResume';
+import ThemeContext from '../../context/ThemeContext';
+import useVanta from '../../hooks/useVanta';
 
 const Photo = lazy(() => import('./components/Photo/Photo'));
 
 const Header = ({ contacts, photos }) => {
+  const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
-  const ref = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState(0);
-
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        NET({
-          el: ref.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x0d6efd,
-          backgroundColor: 0xffffff,
-          points: 10.0,
-          maxDistance: 20.0,
-          spacing: 20.0,
-        }),
-      );
-    }
-  }, [vantaEffect]);
+  const { setRef } = useVanta();
 
   return (
-    <Container fluid ref={ref} className="p-5 border-bottom">
+    <Container fluid ref={setRef} className="p-5 border-bottom">
       <Row className="justify-content-center">
         <Col
           lg={5}
           className="d-flex flex-column justify-content-center align-items-center align-items-lg-start"
         >
-          <h1 className="text-center text-md-start">{t('header.title')}</h1>
-          <h6>{t('header.caption')}</h6>
+          <h1 className={classNames('text-center', 'text-md-start', theme.class.text)}>
+            {t('header.title')}
+          </h1>
+          <h6 className={theme.class.text}>{t('header.caption')}</h6>
           <Contacts contacts={contacts} />
           <DownloadResume text={t('header.download')} />
         </Col>

@@ -41,5 +41,6 @@ module.exports = {
     'no-new': 0,
     'no-use-before-define': 0,
     'no-shadow': 0,
+    'react/jsx-no-constructed-context-values': 0,
   },
 };
