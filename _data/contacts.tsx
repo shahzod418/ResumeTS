@@ -1,16 +1,10 @@
-import React, { lazy, ReactElement } from 'react';
+import React, { lazy } from 'react';
+import IContact from '../source/Interfaces/IContact';
 
 const TelegramIcon = lazy(() => import('react-bootstrap-icons/dist/icons/telegram'));
 const EnvelopeIcon = lazy(() => import('react-bootstrap-icons/dist/icons/envelope'));
 const PhoneIcon = lazy(() => import('react-bootstrap-icons/dist/icons/phone'));
 const GithubIcon = lazy(() => import('react-bootstrap-icons/dist/icons/github'));
-
-export interface IContact {
-  type: string;
-  link: string;
-  popup: string;
-  lazy: ReactElement;
-}
 
 const contacts: IContact[] = [
   {

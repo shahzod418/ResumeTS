@@ -1,5 +1,5 @@
-import links from '../../_data/projects/links';
+import projectsLinks from '../../_data/projectsLinks';
 
-const getLinks = (id) => links.find((link) => link.id === id).links;
+const getLinks = (id) => projectsLinks.find((link) => link.id === id).links;
 
 export default getLinks;

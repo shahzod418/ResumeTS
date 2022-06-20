@@ -1,13 +1,6 @@
-export interface IProjectLink {
-  id: string;
-  links: {
-    id: string;
-    name: string;
-    link: string;
-  }[];
-}
+import IProjectLink from '../source/Interfaces/IProjectLink';
 
-const links: IProjectLink[] = [
+const projectsLinks: IProjectLink[] = [
   {
     id: 'resume',
     links: [
@@ -100,4 +93,4 @@ const links: IProjectLink[] = [
   },
 ];
 
-export default links;
+export default projectsLinks;

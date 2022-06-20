@@ -1,4 +1,6 @@
-const themes = {
+import IThemes from '../source/Interfaces/IThemes';
+
+const themes: IThemes = {
   light: {
     id: 'light',
     background: '#fff',

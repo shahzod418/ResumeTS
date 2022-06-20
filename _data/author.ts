@@ -1,7 +1,4 @@
-export interface IAuthor {
-  name: string;
-  link: string;
-}
+import IAuthor from '../source/Interfaces/IAuthor';
 
 const author: IAuthor = {
   name: 'Davlatov Shahzod',
