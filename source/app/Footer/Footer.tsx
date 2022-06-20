@@ -9,7 +9,7 @@ const Footer = ({ author }) => {
   return (
     <Container
       fluid
-      className={classNames('ps-3', 'pt-1', 'pb-1', theme.class.footer)}
+      className={classNames('ps-3', 'pt-1', 'pb-1')}
       style={{ backgroundColor: theme.footer }}
     >
       <Row className="align-items-center">

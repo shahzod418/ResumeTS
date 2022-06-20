@@ -9,8 +9,6 @@ const themes = {
     class: {
       text: '',
       border: '',
-      footer: '',
-      navbar: '',
       btn: 'btn-outline-dark',
       contact: 'text-black',
     },
@@ -30,8 +28,6 @@ const themes = {
     class: {
       text: 'text-white',
       border: 'border-white',
-      footer: 'border-top',
-      navbar: 'border-bottom',
       btn: 'btn-outline-light',
       contact: 'text-white',
     },

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useContext } from 'react';
+import React, { lazy, Suspense, useContext, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
@@ -6,17 +6,21 @@ import PhotoSpinner from './components/Photo/components/PhotoSpinner';
 import Contacts from './components/Contacts/Contacts';
 import DownloadResume from './components/DownloadResume';
 import ThemeContext from '../../context/ThemeContext';
-import useVanta from '../../hooks/useVanta';
+import hexagon from '../../../assets/images/Hexagon.svg';
 
 const Photo = lazy(() => import('./components/Photo/Photo'));
 
 const Header = ({ contacts, photos }) => {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
-  const { setRef } = useVanta();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    ref.current.style.backgroundImage = `url('${hexagon}')`;
+  }, [theme]);
 
   return (
-    <Container fluid ref={setRef} className="p-5 border-bottom">
+    <Container fluid ref={ref} className="p-5">
       <Row className="justify-content-center">
         <Col
           lg={5}

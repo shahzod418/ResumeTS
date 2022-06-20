@@ -15,7 +15,7 @@ const TopPanel = ({ pages }) => {
   return (
     <Navbar
       variant="dark"
-      className={classNames(theme.class.navbar, {
+      className={classNames({
         'position-sticky': isMobile,
         'sticky-top': isMobile,
         'position-static': !isMobile,
