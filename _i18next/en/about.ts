@@ -10,11 +10,11 @@ const about: IAboutMe = {
   },
   age: {
     title: 'Age',
-    text: currentAge,
+    text: currentAge(),
   },
   birthday: {
     title: 'Date of birth',
-    text: myBirthday.toLocaleString('en', {
+    text: myBirthday().toLocaleString('en', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
