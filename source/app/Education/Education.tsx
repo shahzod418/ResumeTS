@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import classNames from 'classnames';
 import Higher from './components/Higher/Higher';
 import Additional from './components/Additional/Additional';
-import classNames from 'classnames';
 import ThemeContext from '../../context/ThemeContext';
 
 const Education = ({ title, info }) => {

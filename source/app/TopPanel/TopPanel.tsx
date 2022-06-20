@@ -23,7 +23,9 @@ const TopPanel = ({ pages }) => {
       style={{ background: theme.navbar }}
     >
       <Container className="position-static">
-        <Navbar.Brand>Frontend Developer CV</Navbar.Brand>
+        <div className="w-25">
+          <Navbar.Brand>Frontend Developer</Navbar.Brand>
+        </div>
         <Navbar.Collapse className="justify-content-end">
           <Theme />
           <Language languages={languages} />

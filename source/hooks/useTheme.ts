@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from 'react';
 import themes from '../../_data/themes';
 
 const useTheme = () => {

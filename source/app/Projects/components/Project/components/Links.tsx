@@ -1,11 +1,11 @@
-import React, { Suspense, lazy, useContext } from "react";
+import React, { Suspense, lazy, useContext } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
-import ThemeContext from "../../../../../context/ThemeContext";
+import ThemeContext from '../../../../../context/ThemeContext';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/github'));
 
 const Links = ({ links }) => {
-  const {theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   if (!links) {
     return null;
