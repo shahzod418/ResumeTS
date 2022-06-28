@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
 import Language from './components/Language';
@@ -6,10 +6,11 @@ import languages from '../../../_data/languages';
 import NavOffCanvas from './components/NavOffCanvas/NavOffCanvas';
 import useDevice from '../../hooks/useDevice';
 import Theme from './components/Theme';
-import ThemeContext from '../../context/ThemeContext';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
-const TopPanel = ({ pages }) => {
-  const { theme } = useContext(ThemeContext);
+function TopPanel({ pages }) {
+  const theme = useSelector(selectTheme);
   const { isMobile } = useDevice();
 
   return (
@@ -34,6 +35,6 @@ const TopPanel = ({ pages }) => {
       </Container>
     </Navbar>
   );
-};
+}
 
 export default TopPanel;

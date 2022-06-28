@@ -7,7 +7,7 @@ import ThemeContext from '../../../../context/ThemeContext';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/list'));
 
-const NavOffCanvas = ({ pages }) => {
+function NavOffCanvas({ pages }) {
   const { theme } = useContext(ThemeContext);
   const { show, handleShow, handleClose } = useShowCanvas();
   const { t } = useTranslation();
@@ -36,6 +36,6 @@ const NavOffCanvas = ({ pages }) => {
       </Offcanvas>
     </>
   );
-};
+}
 
 export default NavOffCanvas;

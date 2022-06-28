@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Spinner } from 'react-bootstrap';
 
-const LazyGif = ({ name }) => {
-  const [gif, setGif] = useState();
+function LazyGif({ name }) {
+  const [gif, setGif] = useState<any>();
 
   useEffect(() => {
     import(`../../assets/gifs/${name}.gif`).then(setGif);
@@ -18,6 +18,6 @@ const LazyGif = ({ name }) => {
       style={{ left: '50%', top: '100px' }}
     />
   );
-};
+}
 
 export default LazyGif;

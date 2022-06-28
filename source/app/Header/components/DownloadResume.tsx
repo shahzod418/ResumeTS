@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import useDownloadResume from '../../../hooks/useDownloadResume';
-import ThemeContext from '../../../context/ThemeContext';
+import useSelector from '../../../store/hooks/useSelector';
+import selectTheme from '../../../store/modules/theme/selectors';
 
-const DownloadResume = ({ text }) => {
-  const { theme } = useContext(ThemeContext);
+function DownloadResume({ text }) {
+  const theme = useSelector(selectTheme);
   const { isDownload, handleDownload } = useDownloadResume();
 
   return (
@@ -20,6 +21,6 @@ const DownloadResume = ({ text }) => {
       </span>
     </button>
   );
-};
+}
 
 export default DownloadResume;

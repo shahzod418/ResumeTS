@@ -3,7 +3,7 @@ import { Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-const Navigation = ({ pages }) => {
+function Navigation({ pages }) {
   const { t } = useTranslation();
 
   return (
@@ -17,6 +17,6 @@ const Navigation = ({ pages }) => {
       ))}
     </Nav>
   );
-};
+}
 
 export default Navigation;

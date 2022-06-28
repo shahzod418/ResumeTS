@@ -1,4 +1,4 @@
-import IAboutMe from '../../source/Interfaces/IAboutMe';
+import IAboutMe from '../../source/interfaces/IAboutMe';
 import getDates from '../../source/api/getDates';
 
 const { myBirthday, currentAge } = getDates();
@@ -10,11 +10,11 @@ const about: IAboutMe = {
   },
   age: {
     title: 'Возраст',
-    text: currentAge(),
+    text: currentAge,
   },
   birthday: {
     title: 'Дата рождения',
-    text: myBirthday().toLocaleString('ru', {
+    text: myBirthday.toLocaleString('ru', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',

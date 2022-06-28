@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react';
 
 const useClipboard = () => {
-  const [isCopy, setCopy] = useState(false);
+  const [isCopy, setCopy] = useState<boolean>(false);
 
   const handleClipboard = useCallback(
-    (text) => async () => {
+    (text: string) => async () => {
       try {
         await navigator.clipboard.writeText(text);
         setCopy(true);

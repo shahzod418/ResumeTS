@@ -6,7 +6,7 @@ import ThemeContext from '../../../../../context/ThemeContext';
 const ClipboardIcon = lazy(() => import('react-bootstrap-icons/dist/icons/clipboard'));
 const ClipboardCheckIcon = lazy(() => import('react-bootstrap-icons/dist/icons/clipboard-check'));
 
-const Clipboard = ({ popup }) => {
+function Clipboard({ popup }) {
   const { theme } = useContext(ThemeContext);
   const { isCopy, handleClipboard } = useClipboard();
 
@@ -33,6 +33,6 @@ const Clipboard = ({ popup }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Clipboard;

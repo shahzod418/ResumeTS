@@ -1,10 +1,11 @@
 import { Col, ListGroup, Row, Tab } from 'react-bootstrap';
-import React, { useContext } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import ThemeContext from '../../../context/ThemeContext';
+import useSelector from '../../../store/hooks/useSelector';
+import selectTheme from '../../../store/modules/theme/selectors';
 
-const SkillsContent = ({ skills }) => {
-  const { theme } = useContext(ThemeContext);
+function SkillsContent({ skills }) {
+  const theme = useSelector(selectTheme);
 
   return (
     <Tab.Content>
@@ -33,6 +34,6 @@ const SkillsContent = ({ skills }) => {
       ))}
     </Tab.Content>
   );
-};
+}
 
 export default SkillsContent;

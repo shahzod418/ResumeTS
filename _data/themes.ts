@@ -1,4 +1,4 @@
-import IThemes from '../source/Interfaces/IThemes';
+import IThemes from '../source/interfaces/IThemes';
 
 const themes: IThemes = {
   light: {

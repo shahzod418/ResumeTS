@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import ThemeContext from '../../../../../context/ThemeContext';
 
-const NavCanvas = ({ pages, handleClose }) => {
+function NavCanvas({ pages, handleClose }) {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
 
@@ -24,6 +24,6 @@ const NavCanvas = ({ pages, handleClose }) => {
       </ListGroup>
     </Nav>
   );
-};
+}
 
 export default NavCanvas;

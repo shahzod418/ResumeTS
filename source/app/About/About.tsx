@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import classNames from 'classnames';
 import AboutTable from './components/AboutTable';
-import ThemeContext from '../../context/ThemeContext';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
-const About = ({ title, info }) => {
-  const { theme } = useContext(ThemeContext);
+function About({ title, info }) {
+  const theme = useSelector(selectTheme);
   const { description } = info;
 
   return (
@@ -18,8 +19,8 @@ const About = ({ title, info }) => {
           <AboutTable info={info} />
         </Col>
         <Col lg={7} className="align-self-center">
-          {description.split('\n').map((text: string, id: number) => (
-            <p key={id} className="rounded-3">
+          {description.split('\n').map((text: string) => (
+            <p key={text} className="rounded-3">
               {text}
             </p>
           ))}
@@ -27,6 +28,6 @@ const About = ({ title, info }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default About;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import University from './components/University';
 
-const Higher = ({ higher }) => {
+function Higher({ higher }) {
   const { title, universities } = higher;
 
   return (
@@ -21,6 +21,6 @@ const Higher = ({ higher }) => {
       ))}
     </Container>
   );
-};
+}
 
 export default Higher;

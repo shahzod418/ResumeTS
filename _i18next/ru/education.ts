@@ -1,14 +1,14 @@
-import IEducation from '../../source/Interfaces/IEducation';
+import IEducation from '../../source/interfaces/IEducation';
 
 const education: IEducation = {
   higher: {
-    title: 'Незаконченное высшее',
+    title: 'Высшее',
     universities: [
       {
         university: 'Российский экономический университет имени Г.В. Плеханова',
         faculty: 'Высшая школа кибертехнологий, математики и статистики',
         specialisation: 'Инжиниринг предприятий и информационных систем',
-        date: 'Сентябрь 2018 – настоящее время',
+        date: 'Сентябрь 2018 – Июнь 2022',
       },
     ],
   },

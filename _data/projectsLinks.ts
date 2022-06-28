@@ -1,4 +1,4 @@
-import IProjectLink from '../source/Interfaces/IProjectLink';
+import IProjectLink from '../source/interfaces/IProjectLink';
 
 const projectsLinks: IProjectLink[] = [
   {

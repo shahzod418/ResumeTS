@@ -1,4 +1,4 @@
-import IAuthor from '../source/Interfaces/IAuthor';
+import IAuthor from '../source/interfaces/IAuthor';
 
 const author: IAuthor = {
   name: 'Davlatov Shahzod',

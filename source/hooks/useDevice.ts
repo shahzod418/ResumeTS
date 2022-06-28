@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 const useDevice = () => {
-  const [isMobile, setIsMobile] = useState(() => false);
-  const { current } = useRef(window);
+  const [isMobile, setIsMobile] = useState<boolean>(() => false);
+  const { current } = useRef<Window>(window);
 
   const handleResize = () => {
     setIsMobile(() => window.screen.width <= 575);

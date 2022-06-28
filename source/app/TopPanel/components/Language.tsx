@@ -5,7 +5,7 @@ import Popup from 'reactjs-popup';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/translate'));
 
-const Language = ({ languages }) => {
+function Language({ languages }) {
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
 
@@ -43,6 +43,6 @@ const Language = ({ languages }) => {
       </ListGroup>
     </Popup>
   );
-};
+}
 
 export default Language;

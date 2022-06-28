@@ -1,11 +1,12 @@
-import React, { Suspense, useContext } from 'react';
+import React, { Suspense } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import Popup from 'reactjs-popup';
 import Clipboard from './components/Clipboard';
-import ThemeContext from '../../../../context/ThemeContext';
+import useSelector from '../../../../store/hooks/useSelector';
+import selectTheme from '../../../../store/modules/theme/selectors';
 
-const Contacts = ({ contacts }) => {
-  const { theme } = useContext(ThemeContext);
+function Contacts({ contacts }) {
+  const theme = useSelector(selectTheme);
 
   const contentStyle = { background: theme.popup.background, borderRadius: '0.25rem' };
   const arrowStyle = { color: theme.popup.color };
@@ -33,6 +34,6 @@ const Contacts = ({ contacts }) => {
       ))}
     </div>
   );
-};
+}
 
 export default Contacts;

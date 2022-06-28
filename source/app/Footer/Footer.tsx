@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
-import ThemeContext from '../../context/ThemeContext';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
-const Footer = ({ author }) => {
-  const { theme } = useContext(ThemeContext);
+function Footer({ author }) {
+  const theme = useSelector(selectTheme);
 
   return (
     <Container
@@ -27,6 +28,6 @@ const Footer = ({ author }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Footer;

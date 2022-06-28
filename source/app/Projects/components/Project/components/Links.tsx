@@ -1,11 +1,12 @@
-import React, { Suspense, lazy, useContext } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
-import ThemeContext from '../../../../../context/ThemeContext';
+import useSelector from '../../../../../store/hooks/useSelector';
+import selectTheme from '../../../../../store/modules/theme/selectors';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/github'));
 
-const Links = ({ links }) => {
-  const { theme } = useContext(ThemeContext);
+function Links({ links }) {
+  const theme = useSelector(selectTheme);
 
   if (!links) {
     return null;
@@ -24,6 +25,6 @@ const Links = ({ links }) => {
       ))}
     </div>
   );
-};
+}
 
 export default Links;

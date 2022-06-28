@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-const University = ({ university, faculty, specialisation, date }) => {
+function University({ university, faculty, specialisation, date }) {
   return (
     <Row key={university} className="mb-4">
       <Col lg={4} className="border-start border-end d-flex align-items-center mb-3 mb-lg-0">
@@ -14,6 +14,6 @@ const University = ({ university, faculty, specialisation, date }) => {
       </Col>
     </Row>
   );
-};
+}
 
 export default University;

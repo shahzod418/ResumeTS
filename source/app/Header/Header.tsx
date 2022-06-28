@@ -1,23 +1,24 @@
-import React, { lazy, Suspense, useContext, useEffect, useRef } from 'react';
+import React, { lazy, Suspense, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import PhotoSpinner from './components/Photo/components/PhotoSpinner';
 import Contacts from './components/Contacts/Contacts';
 import DownloadResume from './components/DownloadResume';
-import ThemeContext from '../../context/ThemeContext';
 import hexagon from '../../../assets/images/Hexagon.svg';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
 const Photo = lazy(() => import('./components/Photo/Photo'));
 
-const Header = ({ contacts, photos }) => {
-  const { theme } = useContext(ThemeContext);
+function Header({ contacts, photos }) {
+  const theme = useSelector(selectTheme);
   const { t } = useTranslation();
   const ref = useRef(null);
 
   useEffect(() => {
     ref.current.style.backgroundImage = `url('${hexagon}')`;
-  }, [theme]);
+  }, []);
 
   return (
     <Container fluid ref={ref} className="p-5">
@@ -41,6 +42,6 @@ const Header = ({ contacts, photos }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Header;

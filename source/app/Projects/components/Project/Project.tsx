@@ -4,10 +4,10 @@ import Links from './components/Links';
 import getLinks from '../../../../api/getLinks';
 import Gif from './components/Gif';
 
-const Project = ({ project }) => {
+function Project({ project }) {
   const { title, shortDescription, stack, description } = project;
 
-  const links = getLinks(project.id);
+  const links = getLinks(project.id)?.links;
 
   return (
     <Container className="p-3">
@@ -27,6 +27,6 @@ const Project = ({ project }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Project;

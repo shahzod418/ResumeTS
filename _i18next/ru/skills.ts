@@ -1,4 +1,4 @@
-import ISkill from '../../source/Interfaces/ISkill';
+import ISkill from '../../source/interfaces/ISkill';
 
 const skills: ISkill[] = [
   {

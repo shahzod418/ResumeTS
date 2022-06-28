@@ -1,4 +1,4 @@
-import IProject from '../../source/Interfaces/IProject';
+import IProject from '../../source/interfaces/IProject';
 import resume from './markdown/resume.md';
 import multilingualClicker from './markdown/multilingualClicker.md';
 import contractBuilder from './markdown/contractBuilder.md';

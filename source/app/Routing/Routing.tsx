@@ -28,7 +28,7 @@ const mappingRoute = {
   ),
 };
 
-const Routing = ({ pages }) => {
+function Routing({ pages }) {
   const { t } = useTranslation();
 
   return (
@@ -40,6 +40,6 @@ const Routing = ({ pages }) => {
       <Route path="*" element={<Joke title={t('toast')} />} />
     </Routes>
   );
-};
+}
 
 export default Routing;

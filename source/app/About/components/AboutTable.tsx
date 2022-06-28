@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Table } from 'react-bootstrap';
-import ThemeContext from '../../../context/ThemeContext';
+import useSelector from '../../../store/hooks/useSelector';
+import selectTheme from '../../../store/modules/theme/selectors';
 
-const AboutTable = ({ info }) => {
-  const { theme } = useContext(ThemeContext);
+function AboutTable({ info }) {
+  const theme = useSelector(selectTheme);
 
   return (
     <Table responsive>
@@ -23,6 +24,6 @@ const AboutTable = ({ info }) => {
       </tbody>
     </Table>
   );
-};
+}
 
 export default AboutTable;

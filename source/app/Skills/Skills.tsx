@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Col, Container, Row, Tab } from 'react-bootstrap';
 import classNames from 'classnames';
 import SkillsNav from './components/SkillsNav';
 import SkillsContent from './components/SkillsContent';
-import ThemeContext from '../../context/ThemeContext';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
-const Skills = ({ header, skills }) => {
-  const { theme } = useContext(ThemeContext);
+function Skills({ header, skills }) {
+  const theme = useSelector(selectTheme);
 
   return (
     <Container className={classNames('p-5', theme.class.text)}>
@@ -27,6 +28,6 @@ const Skills = ({ header, skills }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Skills;

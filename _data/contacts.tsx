@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import IContact from '../source/Interfaces/IContact';
+import IContact from '../source/interfaces/IContact';
 
 const TelegramIcon = lazy(() => import('react-bootstrap-icons/dist/icons/telegram'));
 const EnvelopeIcon = lazy(() => import('react-bootstrap-icons/dist/icons/envelope'));

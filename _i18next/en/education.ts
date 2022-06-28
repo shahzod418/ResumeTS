@@ -1,14 +1,14 @@
-import IEducation from '../../source/Interfaces/IEducation';
+import IEducation from '../../source/interfaces/IEducation';
 
 const education: IEducation = {
   higher: {
-    title: 'Uncompleted higher education',
+    title: 'Higher',
     universities: [
       {
         university: 'Plekhanov Russian University of Economics',
         faculty: 'Graduate School of Cyber Technology, Mathematics and Statistics',
         specialisation: 'Enterprise and information systems engineering',
-        date: 'September 2018 - present',
+        date: 'September 2018 - June 2022',
       },
     ],
   },
@@ -19,7 +19,7 @@ const education: IEducation = {
         school: 'learn.javascript.ru',
         courses: [
           {
-            name: 'JavaScript/DOM/Interfaces',
+            name: 'JavaScript/DOM/interfaces',
             date: 'April 2022 to June 2022',
             link: 'https://learn.javascript.ru/courses/jsbasic-20220418-2/shahzod-davlatov/ru/certificate.jpg',
           },

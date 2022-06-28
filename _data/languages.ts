@@ -1,4 +1,4 @@
-import ILanguage from '../source/Interfaces/ILanguage';
+import ILanguage from '../source/interfaces/ILanguage';
 
 const languages: ILanguage[] = [
   { short: 'ru', full: 'Русский' },

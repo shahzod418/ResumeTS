@@ -1,11 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Accordion } from 'react-bootstrap';
 import classNames from 'classnames';
 import Project from './Project/Project';
-import ThemeContext from '../../../context/ThemeContext';
+import useSelector from '../../../store/hooks/useSelector';
+import selectTheme from '../../../store/modules/theme/selectors';
 
-const ProjectsAccordion = ({ projects }) => {
-  const { theme } = useContext(ThemeContext);
+function ProjectsAccordion({ projects }) {
+  const theme = useSelector(selectTheme);
   const [activeItem, setActiveItem] = useState(projects[0].id);
 
   const handleClick = (id) => () => {
@@ -36,6 +37,6 @@ const ProjectsAccordion = ({ projects }) => {
       })}
     </Accordion>
   );
-};
+}
 
 export default ProjectsAccordion;

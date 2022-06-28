@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import classNames from 'classnames';
 import Higher from './components/Higher/Higher';
 import Additional from './components/Additional/Additional';
-import ThemeContext from '../../context/ThemeContext';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
-const Education = ({ title, info }) => {
-  const { theme } = useContext(ThemeContext);
+function Education({ title, info }) {
+  const theme = useSelector(selectTheme);
   const { higher, additional } = info;
 
   return (
@@ -22,6 +23,6 @@ const Education = ({ title, info }) => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Education;

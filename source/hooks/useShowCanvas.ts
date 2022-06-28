@@ -5,13 +5,6 @@ const useShowCanvas = () => {
   const [show, setShow] = useState(false);
   const { isSwipe, setIsSwipe } = useSwipe();
 
-  useEffect(() => {
-    if (isSwipe) {
-      handleShow();
-      setIsSwipe(false);
-    }
-  }, [isSwipe]);
-
   const handleClose = useCallback(() => {
     setShow(false);
   }, []);
@@ -19,6 +12,13 @@ const useShowCanvas = () => {
   const handleShow = useCallback(() => {
     setShow(true);
   }, []);
+
+  useEffect(() => {
+    if (isSwipe) {
+      handleShow();
+      setIsSwipe(false);
+    }
+  }, [isSwipe]);
 
   return { show, handleShow, handleClose };
 };

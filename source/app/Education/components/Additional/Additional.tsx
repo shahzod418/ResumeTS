@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Course from './components/Course';
 
-const Additional = ({ additional }) => {
+function Additional({ additional }) {
   const { title, schools } = additional;
 
   return (
@@ -17,6 +17,6 @@ const Additional = ({ additional }) => {
       )}
     </Container>
   );
-};
+}
 
 export default Additional;
