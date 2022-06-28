@@ -1,15 +1,16 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, lazy, Suspense, FC } from 'react';
 import { Button, ListGroup, Spinner } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import Popup from 'reactjs-popup';
+import ILanguage from '../../../interfaces/ILanguage';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/translate'));
 
-function Language({ languages }) {
+const Language: FC<{ languages: ILanguage[] }> = ({ languages }) => {
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
 
-  const handleChangeLanguage = (short) => async () => {
+  const handleChangeLanguage = (short: string) => async () => {
     if (short === language) return;
 
     await i18n.changeLanguage(short);
@@ -43,6 +44,6 @@ function Language({ languages }) {
       </ListGroup>
     </Popup>
   );
-}
+};
 
 export default Language;

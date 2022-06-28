@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Col, Container, Row, Tab } from 'react-bootstrap';
 import classNames from 'classnames';
 import SkillsNav from './components/SkillsNav';
 import SkillsContent from './components/SkillsContent';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
+import ISkill from '../../interfaces/ISkill';
 
-function Skills({ header, skills }) {
+interface SkillsProps {
+  header: string;
+  skills: ISkill[];
+}
+
+const Skills: FC<SkillsProps> = ({ header, skills }) => {
   const theme = useSelector(selectTheme);
 
   return (
@@ -28,6 +34,6 @@ function Skills({ header, skills }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Skills;

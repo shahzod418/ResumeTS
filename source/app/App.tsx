@@ -11,7 +11,7 @@ import elevator from '../../assets/images/3926DCAF-C0E0-44D9-85CC-7AB187A1D431_1
 import pages from '../../_data/pages';
 import StoreProvider from '../store/components/StoreProvider';
 
-function App() {
+const App = () => {
   return (
     <StoreProvider>
       <TopPanel pages={pages} />
@@ -23,6 +23,6 @@ function App() {
       <Footer author={author} />
     </StoreProvider>
   );
-}
+};
 
 export default App;

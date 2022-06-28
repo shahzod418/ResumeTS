@@ -28,5 +28,12 @@ module.exports = {
     'default-param-last': 0,
     'no-use-before-define': 0,
     'no-new': 0,
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
 };

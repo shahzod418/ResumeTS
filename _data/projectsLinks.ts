@@ -1,6 +1,6 @@
-import IProjectLink from '../source/interfaces/IProjectLink';
+import IProjectLinks from '../source/interfaces/IProjectLinks';
 
-const projectsLinks: IProjectLink[] = [
+const projectsLinks: IProjectLinks[] = [
   {
     id: 'resume',
     links: [

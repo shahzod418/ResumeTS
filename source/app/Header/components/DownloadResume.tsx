@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import useDownloadResume from '../../../hooks/useDownloadResume';
 import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
 
-function DownloadResume({ text }) {
+const DownloadResume: FC<{ text: string }> = ({ text }) => {
   const theme = useSelector(selectTheme);
   const { isDownload, handleDownload } = useDownloadResume();
 
@@ -21,6 +21,6 @@ function DownloadResume({ text }) {
       </span>
     </button>
   );
-}
+};
 
 export default DownloadResume;

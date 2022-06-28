@@ -8,7 +8,7 @@ import selectTheme from '../../../store/modules/theme/selectors';
 const Sun = lazy(() => import('react-bootstrap-icons/dist/icons/sun'));
 const Moon = lazy(() => import('react-bootstrap-icons/dist/icons/moon'));
 
-function Theme() {
+const Theme = () => {
   const theme = useSelector(selectTheme);
   const dispatch = useDispatch();
   const { current } = useRef(document.body);
@@ -30,6 +30,6 @@ function Theme() {
       </Suspense>
     </Button>
   );
-}
+};
 
 export default Theme;

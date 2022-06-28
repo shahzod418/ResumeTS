@@ -1,18 +1,22 @@
-import React from 'react';
-import { Container, Image, Row } from 'react-bootstrap';
-import gif from '../../../assets/gifs/rick-astley-never-gonna-give-you-up.gif';
+import React, { FC } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import LazyGif from '../../hoсs/LazyGif';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
-function Joke({ title }) {
+const Joke: FC<{ title: string }> = ({ title }) => {
+  const theme = useSelector(selectTheme);
+
   return (
-    <Container className="d-flex flex-column align-items-center pt-5">
+    <Container className="d-flex flex-column align-items-center p-5">
       <Row>
-        <h2>{title}</h2>
+        <h2 className={theme.class.text}>{title}</h2>
       </Row>
       <Row>
-        <Image src={gif} />
+        <LazyGif name="rick-astley-never-gonna-give-you-up" />
       </Row>
     </Container>
   );
-}
+};
 
 export default Joke;

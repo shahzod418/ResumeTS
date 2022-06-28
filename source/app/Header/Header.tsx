@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useRef } from 'react';
+import React, { FC, lazy, Suspense, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
@@ -8,13 +8,19 @@ import DownloadResume from './components/DownloadResume';
 import hexagon from '../../../assets/images/Hexagon.svg';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
+import IContact from '../../interfaces/IContact';
 
 const Photo = lazy(() => import('./components/Photo/Photo'));
 
-function Header({ contacts, photos }) {
+interface HeaderProps {
+  contacts: IContact[];
+  photos: string[];
+}
+
+const Header: FC<HeaderProps> = ({ contacts, photos }) => {
   const theme = useSelector(selectTheme);
   const { t } = useTranslation();
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
     ref.current.style.backgroundImage = `url('${hexagon}')`;
@@ -42,6 +48,6 @@ function Header({ contacts, photos }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Header;

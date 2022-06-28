@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import University from './components/University';
+import { IHigher } from '../../../../interfaces/IEducation';
 
-function Higher({ higher }) {
+const Higher: FC<{ higher: IHigher }> = ({ higher }) => {
   const { title, universities } = higher;
 
   return (
@@ -21,6 +22,6 @@ function Higher({ higher }) {
       ))}
     </Container>
   );
-}
+};
 
 export default Higher;

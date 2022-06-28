@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
 import Language from './components/Language';
@@ -9,7 +9,7 @@ import Theme from './components/Theme';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 
-function TopPanel({ pages }) {
+const TopPanel: FC<{ pages: string[] }> = ({ pages }) => {
   const theme = useSelector(selectTheme);
   const { isMobile } = useDevice();
 
@@ -35,6 +35,6 @@ function TopPanel({ pages }) {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default TopPanel;

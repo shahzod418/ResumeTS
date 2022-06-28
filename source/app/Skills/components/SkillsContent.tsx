@@ -1,10 +1,11 @@
 import { Col, ListGroup, Row, Tab } from 'react-bootstrap';
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
+import ISkill from '../../../interfaces/ISkill';
 
-function SkillsContent({ skills }) {
+const SkillsContent: FC<{ skills: ISkill[] }> = ({ skills }) => {
   const theme = useSelector(selectTheme);
 
   return (
@@ -34,6 +35,6 @@ function SkillsContent({ skills }) {
       ))}
     </Tab.Content>
   );
-}
+};
 
 export default SkillsContent;

@@ -16,11 +16,11 @@ const useSwipe = () => {
     touchEnd = 0;
   };
 
-  const handleTouchStart = (event) => {
+  const handleTouchStart = (event: TouchEvent) => {
     touchStart = event.changedTouches[0].screenX;
   };
 
-  const handleTouchEnd = (event) => {
+  const handleTouchEnd = (event: TouchEvent) => {
     touchEnd = event.changedTouches[0].screenX;
     checkDirection();
   };

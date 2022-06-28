@@ -1,4 +1,5 @@
 export default interface IAboutMe {
+  readonly [index: string]: any;
   nationality: {
     title: string;
     text: string;

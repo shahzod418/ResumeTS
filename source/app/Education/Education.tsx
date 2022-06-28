@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import classNames from 'classnames';
 import Higher from './components/Higher/Higher';
 import Additional from './components/Additional/Additional';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
+import IEducation from '../../interfaces/IEducation';
 
-function Education({ title, info }) {
+interface EducationProps {
+  title: string;
+  info: IEducation;
+}
+
+const Education: FC<EducationProps> = ({ title, info }) => {
   const theme = useSelector(selectTheme);
   const { higher, additional } = info;
 
@@ -23,6 +29,6 @@ function Education({ title, info }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Education;

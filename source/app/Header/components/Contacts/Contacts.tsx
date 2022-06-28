@@ -1,11 +1,12 @@
-import React, { Suspense } from 'react';
+import React, { FC, Suspense } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import Popup from 'reactjs-popup';
 import Clipboard from './components/Clipboard';
 import useSelector from '../../../../store/hooks/useSelector';
 import selectTheme from '../../../../store/modules/theme/selectors';
+import IContact from '../../../../interfaces/IContact';
 
-function Contacts({ contacts }) {
+const Contacts: FC<{ contacts: IContact[] }> = ({ contacts }) => {
   const theme = useSelector(selectTheme);
 
   const contentStyle = { background: theme.popup.background, borderRadius: '0.25rem' };
@@ -34,6 +35,6 @@ function Contacts({ contacts }) {
       ))}
     </div>
   );
-}
+};
 
 export default Contacts;

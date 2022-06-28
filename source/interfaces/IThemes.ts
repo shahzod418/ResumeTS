@@ -1,4 +1,4 @@
-interface ITheme {
+export interface ITheme {
   id: string;
   background: string;
   navbar: string;
@@ -19,6 +19,7 @@ interface ITheme {
 }
 
 export default interface IThemes {
+  [index: string]: object;
   light: ITheme;
   dark: ITheme;
 }

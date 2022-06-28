@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
+import IAuthor from '../../interfaces/IAuthor';
 
-function Footer({ author }) {
+const Footer: FC<{ author: IAuthor }> = ({ author }) => {
   const theme = useSelector(selectTheme);
 
   return (
@@ -28,6 +29,6 @@ function Footer({ author }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Footer;

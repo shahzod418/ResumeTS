@@ -1,13 +1,14 @@
-import React, { lazy, Suspense, useContext } from 'react';
+import React, { FC, lazy, Suspense } from 'react';
 import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import useClipboard from '../../../../../hooks/useClipboard';
-import ThemeContext from '../../../../../context/ThemeContext';
+import useSelector from '../../../../../store/hooks/useSelector';
+import selectTheme from '../../../../../store/modules/theme/selectors';
 
 const ClipboardIcon = lazy(() => import('react-bootstrap-icons/dist/icons/clipboard'));
 const ClipboardCheckIcon = lazy(() => import('react-bootstrap-icons/dist/icons/clipboard-check'));
 
-function Clipboard({ popup }) {
-  const { theme } = useContext(ThemeContext);
+const Clipboard: FC<{ popup: string }> = ({ popup }) => {
+  const theme = useSelector(selectTheme);
   const { isCopy, handleClipboard } = useClipboard();
 
   return (
@@ -33,6 +34,6 @@ function Clipboard({ popup }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Clipboard;

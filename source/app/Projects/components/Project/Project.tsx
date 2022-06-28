@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Links from './components/Links';
 import getLinks from '../../../../api/getLinks';
 import Gif from './components/Gif';
+import { IProject } from '../../../../interfaces/IProjects';
 
-function Project({ project }) {
+const Project: FC<{ project: IProject }> = ({ project }) => {
   const { title, shortDescription, stack, description } = project;
 
   const links = getLinks(project.id)?.links;
@@ -23,10 +24,10 @@ function Project({ project }) {
         <Gif id={project.id} />
       </Row>
       <Row>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        <div dangerouslySetInnerHTML={{ __html: `${description}` }} />
       </Row>
     </Container>
   );
-}
+};
 
 export default Project;

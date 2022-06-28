@@ -1,13 +1,17 @@
 import { TFunction, useTranslation } from 'react-i18next';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import React from 'react';
+import React, { FC } from 'react';
 import About from '../About/About';
 import Education from '../Education/Education';
 import Skills from '../Skills/Skills';
 import Projects from '../Projects/Projects';
 import Joke from '../Joke/Joke';
 
-const mappingRoute = {
+interface Index {
+  [index: string]: Function;
+}
+
+const mappingRoute: Index = {
   about: (t: TFunction) => (
     <About title={t('about.title')} info={t('about.description', { returnObjects: true })} />
   ),
@@ -28,7 +32,7 @@ const mappingRoute = {
   ),
 };
 
-function Routing({ pages }) {
+const Routing: FC<{ pages: string[] }> = ({ pages }) => {
   const { t } = useTranslation();
 
   return (
@@ -40,6 +44,6 @@ function Routing({ pages }) {
       <Route path="*" element={<Joke title={t('toast')} />} />
     </Routes>
   );
-}
+};
 
 export default Routing;

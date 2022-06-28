@@ -1,14 +1,15 @@
-import React, { lazy, Suspense, useContext } from 'react';
+import React, { FC, lazy, Suspense } from 'react';
 import { Button, Offcanvas, Spinner } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import useShowCanvas from '../../../../hooks/useShowCanvas';
 import NavCanvas from './components/NavCanvas';
-import ThemeContext from '../../../../context/ThemeContext';
+import useSelector from '../../../../store/hooks/useSelector';
+import selectTheme from '../../../../store/modules/theme/selectors';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/list'));
 
-function NavOffCanvas({ pages }) {
-  const { theme } = useContext(ThemeContext);
+const NavOffCanvas: FC<{ pages: string[] }> = ({ pages }) => {
+  const theme = useSelector(selectTheme);
   const { show, handleShow, handleClose } = useShowCanvas();
   const { t } = useTranslation();
 
@@ -36,6 +37,6 @@ function NavOffCanvas({ pages }) {
       </Offcanvas>
     </>
   );
-}
+};
 
 export default NavOffCanvas;

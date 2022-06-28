@@ -1,7 +1,8 @@
 import { Nav } from 'react-bootstrap';
-import React from 'react';
+import React, { FC } from 'react';
+import ISkill from '../../../interfaces/ISkill';
 
-function SkillsNav({ skills }) {
+const SkillsNav: FC<{ skills: ISkill[] }> = ({ skills }) => {
   return (
     <Nav variant="pills" className="flex-column">
       {skills.map(({ title }) => (
@@ -11,6 +12,6 @@ function SkillsNav({ skills }) {
       ))}
     </Nav>
   );
-}
+};
 
 export default SkillsNav;

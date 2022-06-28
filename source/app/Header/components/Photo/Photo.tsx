@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 
-function Photo({ photos }) {
+const Photo: FC<{ photos: string[] }> = ({ photos }) => {
   return (
     <div style={{ height: '400px', width: '280px' }} className="mx-auto">
       <Carousel fade touch controls={false} indicators={false} interval={2500}>
@@ -13,6 +13,6 @@ function Photo({ photos }) {
       </Carousel>
     </div>
   );
-}
+};
 
 export default Photo;

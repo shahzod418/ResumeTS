@@ -1,18 +1,25 @@
+import IAction from '../../interfaces/IAction';
+import IStore from '../../interfaces/IStore';
+
+interface Index {
+  [index: string]: Function;
+}
+
 class Store {
   private static instance: Store;
 
   rootReducer;
 
-  state: object | undefined;
+  state: IStore | undefined;
 
-  subscribers = {};
+  subscribers: Index = {};
 
-  private constructor(rootReducer) {
+  private constructor(rootReducer: Function) {
     this.rootReducer = rootReducer;
     this.state = this.rootReducer(this.state);
   }
 
-  public static getInstance(rootReducer): Store {
+  public static getInstance(rootReducer: Function): Store {
     if (!Store.instance) {
       Store.instance = new Store(rootReducer);
     }
@@ -20,16 +27,16 @@ class Store {
     return Store.instance;
   }
 
-  public subscribe(key, callback) {
+  public subscribe(key: string, callback: Function) {
     this.subscribers[key] = callback;
     this.subscribers[key](this.state);
   }
 
-  public unsubscribe(key) {
+  public unsubscribe(key: string) {
     delete this.subscribers[key];
   }
 
-  public dispatch(action) {
+  public dispatch(action: IAction) {
     this.state = this.rootReducer(this.state, action);
 
     Object.values(this.subscribers).forEach((subscriberCallback) => {
@@ -40,6 +47,6 @@ class Store {
   }
 }
 
-const createStore = (rootReducer) => Store.getInstance(rootReducer);
+const createStore = (rootReducer: Function) => Store.getInstance(rootReducer);
 
 export default createStore;

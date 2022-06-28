@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import classNames from 'classnames';
 import AboutTable from './components/AboutTable';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
+import IAboutMe from '../../interfaces/IAboutMe';
 
-function About({ title, info }) {
+interface AboutProps {
+  title: string;
+  info: IAboutMe;
+}
+
+const About: FC<AboutProps> = ({ title, info }) => {
   const theme = useSelector(selectTheme);
   const { description } = info;
 
@@ -28,6 +34,6 @@ function About({ title, info }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default About;

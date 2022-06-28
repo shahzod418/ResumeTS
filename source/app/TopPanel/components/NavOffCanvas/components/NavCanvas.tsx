@@ -1,12 +1,18 @@
 import { ListGroup, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import React, { useContext } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-import ThemeContext from '../../../../../context/ThemeContext';
+import useSelector from '../../../../../store/hooks/useSelector';
+import selectTheme from '../../../../../store/modules/theme/selectors';
 
-function NavCanvas({ pages, handleClose }) {
-  const { theme } = useContext(ThemeContext);
+interface NavCanvasProps {
+  pages: string[];
+  handleClose: MouseEventHandler;
+}
+
+const NavCanvas: FC<NavCanvasProps> = ({ pages, handleClose }) => {
+  const theme = useSelector(selectTheme);
   const { t } = useTranslation();
 
   return (
@@ -24,6 +30,6 @@ function NavCanvas({ pages, handleClose }) {
       </ListGroup>
     </Nav>
   );
-}
+};
 
 export default NavCanvas;

@@ -1,7 +1,12 @@
 import { Col, Row } from 'react-bootstrap';
-import React from 'react';
+import React, { FC } from 'react';
+import { ICourse } from '../../../../../interfaces/IEducation';
 
-function Course({ name, school, link, date }) {
+interface CourseProps extends ICourse {
+  school: string;
+}
+
+const Course: FC<CourseProps> = ({ name, school, link, date }) => {
   return (
     <Row>
       <Col lg={2} className="border-start border-end d-flex align-items-center mb-3">
@@ -19,6 +24,6 @@ function Course({ name, school, link, date }) {
       </Col>
     </Row>
   );
-}
+};
 
 export default Course;

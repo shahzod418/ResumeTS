@@ -1,4 +1,4 @@
-import IProject from '../../source/interfaces/IProject';
+import IProjects from '../../source/interfaces/IProjects';
 import resume from './markdown/resume.md';
 import multilingualClicker from './markdown/multilingualClicker.md';
 import contractBuilder from './markdown/contractBuilder.md';
@@ -6,7 +6,7 @@ import brainGame from './markdown/brainGame.md';
 import cognitiveDistortions from './markdown/cognitiveDistortions.md';
 import musicBox from './markdown/musicBox.md';
 
-const projects: IProject[] = [
+const projects: IProjects[] = [
   {
     type: 'Frontend',
     projects: [

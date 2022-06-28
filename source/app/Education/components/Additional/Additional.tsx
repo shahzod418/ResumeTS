@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Course from './components/Course';
+import { IAdditional } from '../../../../interfaces/IEducation';
 
-function Additional({ additional }) {
+const Additional: FC<{ additional: IAdditional }> = ({ additional }) => {
   const { title, schools } = additional;
 
   return (
@@ -17,6 +18,6 @@ function Additional({ additional }) {
       )}
     </Container>
   );
-}
+};
 
 export default Additional;

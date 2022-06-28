@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-function Navigation({ pages }) {
+const Navigation: FC<{ pages: string[] }> = ({ pages }) => {
   const { t } = useTranslation();
 
   return (
@@ -17,6 +17,6 @@ function Navigation({ pages }) {
       ))}
     </Nav>
   );
-}
+};
 
 export default Navigation;

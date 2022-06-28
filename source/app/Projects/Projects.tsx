@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
 import ProjectsAccordion from './components/ProjectsAccordion';
+import IProjects from '../../interfaces/IProjects';
 
-function Projects({ title, info }) {
+interface ProjectsProps {
+  title: string;
+  info: IProjects[];
+}
+
+const Projects: FC<ProjectsProps> = ({ title, info }) => {
   return (
     <Container className="p-5">
       <Row>
@@ -34,6 +40,6 @@ function Projects({ title, info }) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Projects;
