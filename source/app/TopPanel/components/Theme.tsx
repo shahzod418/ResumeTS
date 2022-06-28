@@ -21,7 +21,6 @@ function Theme() {
   const handleChangeTheme = () => {
     const newTheme = theme.id === 'light' ? 'dark' : 'light';
     dispatch(changeTheme(newTheme));
-    console.log(theme);
   };
 
   return (
