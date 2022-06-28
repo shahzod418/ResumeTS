@@ -1,11 +1,20 @@
 #### About the project
 
-Only React functional components were used.
+My CV, written using React and Svelte frameworks in TypeScript. Executed in two versions, in Russian and English. And in two colour themes.
 
-##### Implemented functions
+##### React
 
-- Lazy loading of large components
+- Redux library analogue implemented
+- React Router library has been implemented
+- React.lazy analog for uploading Gif files was implemented
+- React.lazy was implemented along with Suspense
+- Implemented colour switching with device theme detection
+- Implemented custom hook to use swipe on the phone
+
+##### Summary
+
 - Asynchronous PDF download
-- Asynchronous copying to the clipboard
-- Locking buttons when loading and copying
-- Change language locale
+- Asynchronous copying to clipboard
+- Locking buttons during upload and copy
+- Change language locale using i18next
+- Adapted for mobile devices
