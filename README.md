@@ -7,7 +7,7 @@
 
 Моё резюме, написанное с использованием фреймворков React и Svelte на TypeScript. Исполнено в двух версиях, на русском и английском языке. И в двух цветовых темах.
 
-> [Ссылка](www.davlatov.space)
+> [Ссылка](https://davlatov.space)
 
 Стек технологий: _React, React Hooks, Svelte, i18next, html2pdf.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate_
 
