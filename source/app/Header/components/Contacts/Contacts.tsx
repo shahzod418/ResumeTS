@@ -19,7 +19,7 @@ const Contacts: FC<{ contacts: IContact[] }> = ({ contacts }) => {
           key={type}
           trigger={
             <Button size="lg" className="bg-transparent border-0">
-              <Suspense fallback={<Spinner animation="border" size="sm" variant="dark" />}>
+              <Suspense fallback={<Spinner animation="border" size="sm" variant={theme.spinner} />}>
                 <a href={link} target="_blank" className={theme.class.contact} rel="noreferrer">
                   {lazy}
                 </a>

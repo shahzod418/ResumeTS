@@ -1,11 +1,14 @@
 <script>
+  export let dispatch;
+  export let showToast;
+
   import i18n from 'i18next';
   import About from './components/About.svelte';
   import Skills from './components/Skills.svelte';
   import Projects from './components/Projects.svelte';
   import Education from './components/Education.svelte';
   import { onMount } from 'svelte';
-  import Html2Pdf from 'html2pdf.js';
+  import html2pdf from 'html2pdf.js';
 
   const about = i18n.t('about.description', { returnObjects: true });
   const skills = i18n.t('skills.description', { returnObjects: true });
@@ -30,13 +33,15 @@
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     };
 
-    const source = document.querySelector('#download-resume');
+    const element = document.querySelector('#download-resume');
 
-    const exporter = new Html2Pdf(source, options);
-
-    exporter.then((pdf) => {
-      pdf.save();
-    });
+    html2pdf()
+      .from(element)
+      .set(options)
+      .save()
+      .catch(() => {
+        dispatch(showToast());
+      });
   });
 </script>
 

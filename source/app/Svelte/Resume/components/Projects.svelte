@@ -15,7 +15,7 @@
           <h5>{title}</h5>
           <Link {id} />
           <p>{shortDescription}</p>
-          {#if id === 'resume' || id === 'brainGame' || id === 'cognitiveDistortions'}
+          {#if id === 'resume' || id === 'cognitiveDistortions'}
             <p class="html2pdf__page-break mb-5"><i>{stack}</i></p>
           {:else}
             <p><i>{stack}</i></p>
