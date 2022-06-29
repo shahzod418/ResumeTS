@@ -1,6 +1,6 @@
 #### About the project
 
-My CV, written using React and Svelte frameworks in TypeScript. Executed in two versions, in Russian and English. And in two colour themes.
+Executed in two versions, in Russian and English. And in two colour themes
 
 ##### React
 
@@ -10,6 +10,7 @@ My CV, written using React and Svelte frameworks in TypeScript. Executed in two 
 - React.lazy was implemented along with Suspense
 - Implemented colour switching with device theme detection
 - Implemented custom hook to use swipe on the phone
+- Error handling with the Toast component
 
 ##### Summary
 

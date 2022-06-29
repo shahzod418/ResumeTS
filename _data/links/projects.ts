@@ -1,6 +1,6 @@
-import IProjectLinks from '../source/interfaces/IProjectLinks';
+import IProjectLinks from '../../source/interfaces/IProjectLinks';
 
-const projectsLinks: IProjectLinks[] = [
+const projects: IProjectLinks[] = [
   {
     id: 'resume',
     links: [
@@ -93,4 +93,4 @@ const projectsLinks: IProjectLinks[] = [
   },
 ];
 
-export default projectsLinks;
+export default projects;

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Col, Container, Row, Tab } from 'react-bootstrap';
 import classNames from 'classnames';
-import SkillsNav from './components/SkillsNav';
-import SkillsContent from './components/SkillsContent';
+import Tabs from './components/Tabs';
+import Content from './components/Content';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import ISkill from '../../interfaces/ISkill';
@@ -24,10 +24,10 @@ const Skills: FC<SkillsProps> = ({ header, skills }) => {
         <Tab.Container defaultActiveKey={skills[0].title}>
           <Row>
             <Col lg={2} className="mb-3 mb-lg-0">
-              <SkillsNav skills={skills} />
+              <Tabs skills={skills} />
             </Col>
             <Col lg={10}>
-              <SkillsContent skills={skills} />
+              <Content skills={skills} />
             </Col>
           </Row>
         </Tab.Container>

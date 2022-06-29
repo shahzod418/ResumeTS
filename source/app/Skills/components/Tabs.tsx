@@ -2,7 +2,7 @@ import { Nav } from 'react-bootstrap';
 import React, { FC } from 'react';
 import ISkill from '../../../interfaces/ISkill';
 
-const SkillsNav: FC<{ skills: ISkill[] }> = ({ skills }) => {
+const Tabs: FC<{ skills: ISkill[] }> = ({ skills }) => {
   return (
     <Nav variant="pills" className="flex-column">
       {skills.map(({ title }) => (
@@ -14,4 +14,4 @@ const SkillsNav: FC<{ skills: ISkill[] }> = ({ skills }) => {
   );
 };
 
-export default SkillsNav;
+export default Tabs;

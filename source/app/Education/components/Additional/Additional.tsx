@@ -12,8 +12,8 @@ const Additional: FC<{ additional: IAdditional }> = ({ additional }) => {
         <h4 className="mb-3">{title}</h4>
       </Row>
       {schools.map(({ school, courses }) =>
-        courses.map(({ name, date, link }) => (
-          <Course key={name} school={school} name={name} date={date} link={link} />
+        courses.map(({ id, name, date }) => (
+          <Course key={id} school={school} id={id} name={name} date={date} />
         )),
       )}
     </Container>

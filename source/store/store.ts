@@ -1,11 +1,12 @@
 import createStore from './Store/Store';
 import themeReducer from './modules/theme/reducer';
-import IStore from '../interfaces/IStore';
-import IAction from '../interfaces/IAction';
+import IStoreState from '../interfaces/IStoreState';
+import toastReducer from './modules/toast/reducer';
 
-const rootReducer = (state: IStore | any = {}, action: IAction | any = {}) => {
+const rootReducer = (state: IStoreState | any = {}, action: any = {}) => {
   return {
     theme: themeReducer(state.theme, action),
+    toast: toastReducer(state.toast, action),
   };
 };
 

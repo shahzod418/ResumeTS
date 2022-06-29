@@ -5,7 +5,7 @@ import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
 import ISkill from '../../../interfaces/ISkill';
 
-const SkillsContent: FC<{ skills: ISkill[] }> = ({ skills }) => {
+const Content: FC<{ skills: ISkill[] }> = ({ skills }) => {
   const theme = useSelector(selectTheme);
 
   return (
@@ -13,7 +13,7 @@ const SkillsContent: FC<{ skills: ISkill[] }> = ({ skills }) => {
       {skills.map(({ title, list, description }) => (
         <Tab.Pane key={title} eventKey={title}>
           <Row>
-            <Col lg={3}>
+            <Col lg={3} className="mb-3 mb-md-0">
               <ListGroup variant="flush">
                 {list.map((name) => (
                   <ListGroup.Item
@@ -37,4 +37,4 @@ const SkillsContent: FC<{ skills: ISkill[] }> = ({ skills }) => {
   );
 };
 
-export default SkillsContent;
+export default Content;

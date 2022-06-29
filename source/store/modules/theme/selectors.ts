@@ -1,5 +1,5 @@
-import IStore from '../../../interfaces/IStore';
+import IStoreState from '../../../interfaces/IStoreState';
 
-const selectTheme = (state: IStore) => state.theme;
+const selectTheme = (state: IStoreState) => state.theme;
 
 export default selectTheme;

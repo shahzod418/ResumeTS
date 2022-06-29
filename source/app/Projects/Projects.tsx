@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
+import classNames from 'classnames';
 import ProjectsAccordion from './components/ProjectsAccordion';
 import IProjects from '../../interfaces/IProjects';
+import useSelector from '../../store/hooks/useSelector';
+import selectTheme from '../../store/modules/theme/selectors';
 
 interface ProjectsProps {
   title: string;
@@ -9,8 +12,10 @@ interface ProjectsProps {
 }
 
 const Projects: FC<ProjectsProps> = ({ title, info }) => {
+  const theme = useSelector(selectTheme);
+
   return (
-    <Container className="p-5">
+    <Container className={classNames('p-5', theme.class.text)}>
       <Row>
         <h2 className="d-block d-sm-none mb-3">{title}</h2>
       </Row>

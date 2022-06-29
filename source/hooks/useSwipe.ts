@@ -1,15 +1,33 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+
+export enum SwipeType {
+  Left = 'Left',
+  Right = 'Right',
+}
+
+interface ISwipe {
+  status: boolean;
+  type?: SwipeType;
+}
 
 const useSwipe = () => {
-  const [isSwipe, setIsSwipe] = useState(false);
-  const { current } = useRef(document);
+  const [swipe, setSwipe] = useState<ISwipe>({ status: false });
+  const { current } = useRef<Document>(document);
+
+  const changeSwipeStatus = useCallback(() => {
+    setSwipe({ status: false });
+  }, []);
 
   let touchStart = 0;
   let touchEnd = 0;
 
   const checkDirection = () => {
     if (touchStart - touchEnd > 100) {
-      setIsSwipe(true);
+      setSwipe({ status: true, type: SwipeType.Left });
+    }
+
+    if (touchEnd - touchStart > 100) {
+      setSwipe({ status: true, type: SwipeType.Right });
     }
 
     touchStart = 0;
@@ -35,7 +53,7 @@ const useSwipe = () => {
     };
   }, []);
 
-  return { isSwipe, setIsSwipe };
+  return { swipe, setSwipe: changeSwipeStatus };
 };
 
 export default useSwipe;

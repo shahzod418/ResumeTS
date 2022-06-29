@@ -3,7 +3,13 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:prettier/recommended', 'prettier'],
+  extends: [
+    'plugin:typescript-enum/recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:prettier/recommended',
+    'prettier',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,7 +23,7 @@ module.exports = {
       files: ['*.tsx', '*.ts'],
     },
   ],
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'typescript-enum', 'prettier'],
   rules: {
     'import/extensions': 0,
     'no-console': 0,
@@ -28,6 +34,9 @@ module.exports = {
     'default-param-last': 0,
     'no-use-before-define': 0,
     'no-new': 0,
+    'no-shadow': 0,
+    'no-unused-vars': 0,
+    'typescript-enum/no-enum': 0,
     'react/function-component-definition': [
       2,
       {

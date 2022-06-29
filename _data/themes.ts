@@ -8,6 +8,7 @@ const themes: IThemes = {
     footer: '#000',
     spinner: 'dark',
     button: 'outline-dark',
+    closeVariant: '',
     class: {
       text: '',
       border: '',
@@ -27,6 +28,7 @@ const themes: IThemes = {
     footer: '#0d1117',
     spinner: 'light',
     button: 'outline-light',
+    closeVariant: 'white',
     class: {
       text: 'text-white',
       border: 'border-white',

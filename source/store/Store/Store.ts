@@ -1,5 +1,5 @@
-import IAction from '../../interfaces/IAction';
-import IStore from '../../interfaces/IStore';
+import IThemeAction from '../../interfaces/IThemeAction';
+import IStoreState from '../../interfaces/IStoreState';
 
 interface Index {
   [index: string]: Function;
@@ -10,7 +10,7 @@ class Store {
 
   rootReducer;
 
-  state: IStore | undefined;
+  state: IStoreState | undefined;
 
   subscribers: Index = {};
 
@@ -36,7 +36,7 @@ class Store {
     delete this.subscribers[key];
   }
 
-  public dispatch(action: IAction) {
+  public dispatch(action: object) {
     this.state = this.rootReducer(this.state, action);
 
     Object.values(this.subscribers).forEach((subscriberCallback) => {

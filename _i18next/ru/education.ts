@@ -19,9 +19,14 @@ const education: IEducation = {
         school: 'learn.javascript.ru',
         courses: [
           {
+            id: 'LearnJsReact',
+            name: 'Курс по React',
+            date: 'Июнь 2022 - Июль 2022',
+          },
+          {
+            id: 'JavaScriptDomInterfaces',
             name: 'JavaScript/DOM/Интерфейсы',
             date: 'Апрель 2022 - Июнь 2022',
-            link: 'https://learn.javascript.ru/courses/jsbasic-20220418-2/shahzod-davlatov/ru/certificate.jpg',
           },
         ],
       },
@@ -29,19 +34,19 @@ const education: IEducation = {
         school: 'Хекслет',
         courses: [
           {
+            id: 'FrontendDeveloper',
             name: 'Профессия «Фронтенд-разработчик»',
             date: 'Октябрь 2021 – Апрель 2022',
-            link: 'https://ru.hexlet.io/programs/backend',
           },
           {
+            id: 'NodeJsDeveloper',
             name: 'Профессия «Node.js-разработчик»',
             date: 'Октябрь 2021 – Апрель 2022',
-            link: 'https://ru.hexlet.io/programs/layout-designer',
           },
           {
+            id: 'LayoutDesigner',
             name: 'Профессия «Верстальщик»',
             date: 'Август 2021 – Октябрь 2021',
-            link: 'https://ru.hexlet.io/programs/frontend',
           },
         ],
       },
@@ -49,9 +54,9 @@ const education: IEducation = {
         school: 'HTML Academy',
         courses: [
           {
+            id: 'HtmlAcademyTrainers',
             name: 'Тренажёры',
             date: 'Июль 2021 – Август 2021',
-            link: 'https://htmlacademy.ru/courses',
           },
         ],
       },

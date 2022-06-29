@@ -1,9 +1,9 @@
-import { useState, useCallback, useEffect } from 'react';
-import useSwipe from './useSwipe';
+import { useCallback, useEffect, useState } from 'react';
+import useSwipe, { SwipeType } from './useSwipe';
 
 const useShowCanvas = () => {
-  const [show, setShow] = useState(false);
-  const { isSwipe, setIsSwipe } = useSwipe();
+  const [show, setShow] = useState<boolean>(false);
+  const { swipe, setSwipe } = useSwipe();
 
   const handleClose = useCallback(() => {
     setShow(false);
@@ -14,11 +14,18 @@ const useShowCanvas = () => {
   }, []);
 
   useEffect(() => {
-    if (isSwipe) {
-      handleShow();
-      setIsSwipe(false);
+    if (swipe.status) {
+      if (swipe.type === SwipeType.Left) {
+        handleShow();
+      }
+
+      if (swipe.type === SwipeType.Right) {
+        handleClose();
+      }
+
+      setSwipe();
     }
-  }, [isSwipe]);
+  }, [swipe]);
 
   return { show, handleShow, handleClose };
 };

@@ -11,9 +11,9 @@ export interface IHigher {
 }
 
 export interface ICourse {
+  id: string;
   name: string;
   date: string;
-  link: string;
 }
 
 export interface ISchools {
