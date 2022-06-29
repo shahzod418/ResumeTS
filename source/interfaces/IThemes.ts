@@ -5,7 +5,6 @@ export interface ITheme {
   footer: string;
   spinner: string;
   button: string;
-  closeVariant: string;
   class: {
     text: string;
     border: string;

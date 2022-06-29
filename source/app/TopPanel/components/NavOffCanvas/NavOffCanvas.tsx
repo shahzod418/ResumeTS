@@ -28,7 +28,7 @@ const NavOffCanvas: FC<{ pages: string[] }> = ({ pages }) => {
         backdrop
         style={{ backgroundColor: theme.background }}
       >
-        <Offcanvas.Header closeButton closeVariant={theme.closeVariant}>
+        <Offcanvas.Header>
           <Offcanvas.Title className={theme.class.text}>{t('canvas')}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
