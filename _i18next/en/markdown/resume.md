@@ -14,8 +14,8 @@ Executed in two versions, in Russian and English. And in two colour themes
 
 ##### Summary
 
-- Asynchronous PDF download
-- Asynchronous copying to clipboard
+- PDF download
+- Copying to clipboard
 - Locking buttons during upload and copy
 - Change language locale using i18next
 - Adapted for mobile devices

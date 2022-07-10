@@ -47,16 +47,12 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ttf)$/,
         use: ['file-loader'],
       },
       {
         test: /\.md$/,
         use: ['html-loader', 'markdown-loader'],
-      },
-      {
-        test: /\.svelte$/,
-        use: ['svelte-loader'],
       },
     ],
   },

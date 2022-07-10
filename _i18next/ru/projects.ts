@@ -13,10 +13,9 @@ const projects: IProjects[] = [
       {
         id: 'resume',
         title: 'Резюме',
-        shortDescription:
-          'Моё резюме, написанное с использованием фреймворков React и Svelte на TypeScript',
+        shortDescription: 'Моё резюме, написанное с использованием фреймворка React на TypeScript',
         stack:
-          'Стек технологий: React, React Hooks, Svelte, i18next, html2pdf.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
+          'Стек технологий: React, React Hooks, i18next, html2pdf.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
         description: resume,
       },
       {

@@ -1,9 +1,9 @@
-import IAboutMe from '../../source/interfaces/IAboutMe';
+import IAbout from '../../source/interfaces/IAbout';
 import getDates from '../../source/api/getDates';
 
 const { myBirthday, currentAge } = getDates();
 
-const about: IAboutMe = {
+const about: IAbout = {
   nationality: {
     title: 'Гражданство',
     text: 'РФ',

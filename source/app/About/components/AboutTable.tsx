@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
 import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
-import IAboutMe from '../../../interfaces/IAboutMe';
+import IAbout from '../../../interfaces/IAbout';
 
-const AboutTable: FC<{ info: IAboutMe }> = ({ info }) => {
+const AboutTable: FC<{ info: IAbout }> = ({ info }) => {
   const theme = useSelector(selectTheme);
 
   return (

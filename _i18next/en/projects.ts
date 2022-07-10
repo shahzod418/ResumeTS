@@ -13,9 +13,9 @@ const projects: IProjects[] = [
       {
         id: 'resume',
         title: 'CV',
-        shortDescription: 'My CV, written using the React and Svelte frameworks in TypeScript',
+        shortDescription: 'My CV, written using the React framework in TypeScript',
         stack:
-          'Technology Stack: React, React Hooks, Svelte, i18next, html2pdf.js, vanta.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
+          'Technology Stack: React, React Hooks, i18next, html2pdf.js, vanta.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
         description: resume,
       },
       {

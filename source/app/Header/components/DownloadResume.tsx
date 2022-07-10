@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
+import { Spinner } from 'react-bootstrap';
 import useDownloadResume from '../../../hooks/useDownloadResume';
 import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
@@ -17,7 +18,7 @@ const DownloadResume: FC<{ text: string }> = ({ text }) => {
     >
       <span className="d-inline-block rounded-3">
         {text}
-        {isDownload && <div id="download-resume" />}
+        {isDownload && <Spinner animation="border" size="sm" variant={theme.spinner} />}
       </span>
     </button>
   );

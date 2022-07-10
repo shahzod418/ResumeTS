@@ -4,11 +4,11 @@ import classNames from 'classnames';
 import AboutTable from './components/AboutTable';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
-import IAboutMe from '../../interfaces/IAboutMe';
+import IAbout from '../../interfaces/IAbout';
 
 interface AboutProps {
   title: string;
-  info: IAboutMe;
+  info: IAbout;
 }
 
 const About: FC<AboutProps> = ({ title, info }) => {

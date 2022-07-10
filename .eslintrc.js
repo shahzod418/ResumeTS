@@ -23,7 +23,7 @@ module.exports = {
       files: ['*.tsx', '*.ts'],
     },
   ],
-  plugins: ['react', '@typescript-eslint', 'typescript-enum', 'prettier', 'svelte3'],
+  plugins: ['react', '@typescript-eslint', 'typescript-enum', 'prettier'],
   rules: {
     'import/extensions': 0,
     'no-console': 0,
