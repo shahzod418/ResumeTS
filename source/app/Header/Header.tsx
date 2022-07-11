@@ -5,10 +5,12 @@ import classNames from 'classnames';
 import PhotoSpinner from './components/Photo/components/PhotoSpinner';
 import Contacts from './components/Contacts/Contacts';
 import DownloadResume from './components/DownloadResume';
-import hexagon from '../../../assets/images/Hexagon.svg';
+import meteor from '../../../assets/images/Meteor.svg';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IContact from '../../interfaces/IContact';
+import AboutTable from './components/AboutTable';
+import IAbout from '../../interfaces/IAbout';
 
 const Photo = lazy(() => import('./components/Photo/Photo'));
 
@@ -22,28 +24,30 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null!);
 
+  const info: IAbout = t('about.description', { returnObjects: true });
+
   useEffect(() => {
-    ref.current.style.backgroundImage = `url('${hexagon}')`;
+    ref.current.style.backgroundImage = `url('${meteor}')`;
+    ref.current.style.backgroundRepeat = 'no-repeat';
+    ref.current.style.backgroundSize = 'cover';
   }, []);
 
   return (
-    <Container fluid ref={ref} className="p-5">
+    <Container ref={ref} className="p-5">
       <Row className="justify-content-center">
-        <Col
-          lg={5}
-          className="d-flex flex-column justify-content-center align-items-center align-items-lg-start"
-        >
+        <Col xxl={3} className="me-3">
+          <Suspense fallback={<PhotoSpinner />}>
+            <Photo photos={photos} />
+          </Suspense>
+        </Col>
+        <Col xxl={4} className="d-flex flex-column align-items-center align-items-xxl-stretch">
           <h1 className={classNames('text-center', 'text-md-start', theme.class.text)}>
             {t('header.title')}
           </h1>
           <h6 className={theme.class.text}>{t('header.caption')}</h6>
           <Contacts contacts={contacts} />
           <DownloadResume />
-        </Col>
-        <Col lg={3}>
-          <Suspense fallback={<PhotoSpinner />}>
-            <Photo photos={photos} />
-          </Suspense>
+          <AboutTable info={info} />
         </Col>
       </Row>
     </Container>

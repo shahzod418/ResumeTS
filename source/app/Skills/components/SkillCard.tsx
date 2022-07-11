@@ -12,7 +12,7 @@ interface SkillCardProps {
 
 const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
   const theme = useSelector(selectTheme);
-  const { isFlipped, skillLogo, handleClick } = useCard(logo);
+  const { isFlipped, skillLogo, handleClick, handleMouseLeave, handleMouseEnter } = useCard(logo);
 
   const style = {
     height: 220,
@@ -25,6 +25,7 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
         <Card
           style={{ ...style, backgroundColor: 'transparent' }}
           onClick={handleClick}
+          onMouseEnter={handleMouseEnter}
           className="border-0"
         >
           {skillLogo ? (
@@ -40,6 +41,7 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
         <Card
           style={{ ...style, backgroundColor: 'transparent' }}
           onClick={handleClick}
+          onMouseLeave={handleMouseLeave}
           className="border-0"
         >
           <Card.Body className="p-0 d-flex align-items-center">

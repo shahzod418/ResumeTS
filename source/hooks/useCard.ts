@@ -4,8 +4,16 @@ const useCard = (logo: string) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const [skillLogo, setSkillLogo] = useState<any>();
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {
+  const handleClick: MouseEventHandler = useCallback(() => {
     setIsFlipped((prevState) => !prevState);
+  }, []);
+
+  const handleMouseEnter: MouseEventHandler = useCallback(() => {
+    setIsFlipped(true);
+  }, []);
+
+  const handleMouseLeave: MouseEventHandler = useCallback(() => {
+    setIsFlipped(false);
   }, []);
 
   useEffect(() => {
@@ -16,7 +24,7 @@ const useCard = (logo: string) => {
     let timeoutID: number;
     const random = Math.floor(Math.random() * 10);
 
-    if (random === 3 || random === 5 || random === 7 || random === 9) {
+    if (random % 2 === 0) {
       setIsFlipped(true);
       timeoutID = window.setTimeout(() => setIsFlipped(false), 1000);
     }
@@ -26,7 +34,7 @@ const useCard = (logo: string) => {
     };
   }, []);
 
-  return { isFlipped, skillLogo, handleClick };
+  return { isFlipped, skillLogo, handleClick, handleMouseLeave, handleMouseEnter };
 };
 
 export default useCard;

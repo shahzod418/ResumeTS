@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import classNames from 'classnames';
-import AboutTable from './components/AboutTable';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IAbout from '../../interfaces/IAbout';
@@ -21,9 +20,6 @@ const About: FC<AboutProps> = ({ title, info }) => {
         <h2 className="d-block d-sm-none mb-3">{title}</h2>
       </Row>
       <Row>
-        <Col lg={4}>
-          <AboutTable info={info} />
-        </Col>
         <Col lg={7} className="align-self-center">
           {description.split('\n').map((text: string) => (
             <p key={text} className="rounded-3">
