@@ -26,7 +26,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'typescript-enum', 'prettier'],
   rules: {
     'import/extensions': 0,
-    'no-console': 0,
+    'no-console': 2,
     quotes: [2, 'single', { avoidEscape: true }],
     'react/jsx-filename-extension': 0,
     'import/no-unresolved': 0,

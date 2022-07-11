@@ -8,7 +8,6 @@ export default {
     header: {
       title: 'Davlatov Shahzod',
       caption: 'Simplicity is prerequisite for reliability',
-      download: 'Download CV',
     },
     about: {
       title: 'About me',

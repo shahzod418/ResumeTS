@@ -6,24 +6,24 @@ import useDownloadResume from '../../../hooks/useDownloadResume';
 import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
 
-const DownloadResume: FC<{ text: string }> = ({ text }) => {
+const DownloadResume: FC = () => {
   const theme = useSelector(selectTheme);
   const { isDownload, handleDownload } = useDownloadResume();
 
   return (
-    <ButtonGroup className="col-10 col-sm-5 col-md-4 col-lg-6 col-xl-5">
+    <ButtonGroup className="col-8 col-md-5">
       <button
         type="button"
-        className={classNames('btn', 'my-3', theme.class.btn)}
-        onClick={handleDownload}
-        style={{ pointerEvents: isDownload ? 'none' : 'auto' }}
+        className={classNames('col-8', 'btn', 'my-3', theme.class.btn)}
+        onClick={handleDownload('newPage')}
       >
-        <span className="d-inline-block rounded-3">{text}</span>
+        <span className="d-inline-block rounded-3">PDF</span>
       </button>
       <button
         type="button"
         className={classNames('col-1', 'btn', 'my-3', theme.class.btn)}
-        style={{ pointerEvents: 'none' }}
+        onClick={handleDownload('download')}
+        style={{ pointerEvents: isDownload ? 'none' : 'auto' }}
       >
         <span className="d-inline-block rounded-3">
           {isDownload ? (

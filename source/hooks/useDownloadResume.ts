@@ -7,22 +7,36 @@ const useDownloadResume = () => {
   const [isDownload, setIsDownload] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  const handleDownload = useCallback(async () => {
-    await setIsDownload(true);
+  const handleDownload = useCallback(
+    (action: string) => async () => {
+      await setIsDownload(true);
 
-    try {
-      const pdfUri = await getPdf();
-      const pdfLink = document.createElement('a');
-      pdfLink.setAttribute('href', pdfUri);
-      pdfLink.setAttribute('download', 'Davlatov CV');
-      pdfLink.click();
-      pdfLink.remove();
-    } catch (error) {
-      dispatch(showToast());
-    }
+      try {
+        const pdf = await getPdf();
+        const blobStore = new Blob([pdf], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blobStore);
 
-    await setIsDownload(false);
-  }, []);
+        const pdfLink = document.createElement('a');
+        pdfLink.setAttribute('href', url);
+
+        switch (action) {
+          case 'download':
+            pdfLink.setAttribute('download', 'Davlatov CV');
+            break;
+          default:
+            pdfLink.setAttribute('target', '_blank');
+        }
+
+        pdfLink.click();
+        pdfLink.remove();
+      } catch (error) {
+        dispatch(showToast());
+      }
+
+      await setIsDownload(false);
+    },
+    [],
+  );
 
   return { isDownload, handleDownload };
 };

@@ -41,7 +41,9 @@ const getPdf = async () => {
 
   getPdfText(pages, customFonts);
 
-  return pdfDoc.saveAsBase64({ dataUri: true });
+  pdfDoc.setTitle('Davlatov CV');
+
+  return pdfDoc.save();
 };
 
 export default getPdf;

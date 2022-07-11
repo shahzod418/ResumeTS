@@ -38,7 +38,7 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
           </h1>
           <h6 className={theme.class.text}>{t('header.caption')}</h6>
           <Contacts contacts={contacts} />
-          <DownloadResume text={t('header.download')} />
+          <DownloadResume />
         </Col>
         <Col lg={3}>
           <Suspense fallback={<PhotoSpinner />}>

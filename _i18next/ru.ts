@@ -8,7 +8,6 @@ export default {
     header: {
       title: 'Давлатов Шахзод',
       caption: 'Простота — залог надежности',
-      download: 'Скачать резюме',
     },
     about: {
       title: 'Обо мне',
