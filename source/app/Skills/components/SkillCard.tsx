@@ -28,7 +28,11 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
           className="border-0"
         >
           {skillLogo ? (
-            <Card.Img src={skillLogo?.default} style={style} />
+            <Card.Img
+              src={skillLogo?.default}
+              className="m-auto"
+              style={{ height: 100, width: 100 }}
+            />
           ) : (
             <Spinner animation="border" className="m-auto" variant={theme.spinner} />
           )}
@@ -36,7 +40,7 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
         <Card
           style={{ ...style, backgroundColor: 'transparent' }}
           onClick={handleClick}
-          border="primary"
+          className="border-0"
         >
           <Card.Body className="d-flex align-items-center">
             <Card.Text>{text}</Card.Text>
