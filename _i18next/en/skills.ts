@@ -6,10 +6,10 @@ const skills: ISkillsText = {
   TypeScript:
     'I know how to use TypeScript in conjunction with React to type components, props and hooks, as well as using it in conjunction with Redux. I know how to set it up and connect it to the project via Webpack and Babel',
   Bootstrap:
-    'I use it in conjunction with React in my projects. I have a good understanding of how the framework works and how to use it correctly',
+    'I use it in conjunction with React in my projectsLinks. I have a good understanding of how the framework works and how to use it correctly',
   i18next:
-    'Use in my projects in conjunction with React, but can also be used in conjunction with pure JS. Able to load new locales from outside',
-  ReactRouter: 'Actively used in my projects for routing',
+    'Use in my projectsLinks in conjunction with React, but can also be used in conjunction with pure JS. Able to load new locales from outside',
+  ReactRouter: 'Actively used in my projectsLinks for routing',
   Redux:
     'Able to use in pure form, as well as with add-ons for Redux. Can also use Redux Toolkit in conjunction with AsyncThunk',
   Svelte: 'Understand how to work with this framework to write reactive components',
@@ -27,7 +27,7 @@ const skills: ISkillsText = {
   Figma: 'I know how to use it to create simple layouts. I mainly use it for layout layout',
   Git: 'I use it exclusively in the terminal. Can do all the basic operations',
   GitHub:
-    'I know how to use Github Actions. I always write simple workflows for testing in my projects',
+    'I know how to use Github Actions. I always write simple workflows for testing in my projectsLinks',
   Vim: 'The main text editor I use when there is no need to run the IDE',
   WebStorm: "The main IDE for work. It's where I write most of the time. Looking forward to Fleet",
   ESLint:
@@ -37,7 +37,7 @@ const skills: ISkillsText = {
     'I know how to set up a config, and I use it extensively to monitor the quality of my code',
   Jest: 'Able to write simple automated tests',
   Formik: 'I use it to work conveniently with the forms',
-  Vercel: 'The main service I use to deploy my projects. This summary works on it',
+  Vercel: 'The main service I use to deploy my projectsLinks. This summary works on it',
   Babel: 'Used in conjunction with Webpack and TypeScript',
 };
 

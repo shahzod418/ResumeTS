@@ -2,11 +2,11 @@ import React, { Suspense, lazy, FC } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import useSelector from '../../../../../store/hooks/useSelector';
 import selectTheme from '../../../../../store/modules/theme/selectors';
-import { IProjectLink } from '../../../../../interfaces/IProjectLinks';
+import { IProjectLinks } from '../../../../../interfaces/IProjectsLinks';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/github'));
 
-const Links: FC<{ links: IProjectLink[] | undefined }> = ({ links }) => {
+const Links: FC<{ links: IProjectLinks[] | undefined }> = ({ links }) => {
   const theme = useSelector(selectTheme);
 
   if (!links) {

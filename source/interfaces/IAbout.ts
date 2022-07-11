@@ -4,9 +4,9 @@ export default interface IAbout {
     title: string;
     text: string;
   };
-  age: {
+  city: {
     title: string;
-    text: number;
+    text: string;
   };
   birthday: {
     title: string;

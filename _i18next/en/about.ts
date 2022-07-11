@@ -1,20 +1,17 @@
 import IAbout from '../../source/interfaces/IAbout';
-import getDates from '../../source/api/getDates';
-
-const { myBirthday, currentAge } = getDates();
 
 const about: IAbout = {
   nationality: {
     title: 'Citizenship',
     text: 'Russia',
   },
-  age: {
-    title: 'Age',
-    text: currentAge,
+  city: {
+    title: 'City',
+    text: 'Moscow',
   },
   birthday: {
     title: 'Date of birth',
-    text: myBirthday.toLocaleString('en', {
+    text: new Date('2000-09-17').toLocaleString('en', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',

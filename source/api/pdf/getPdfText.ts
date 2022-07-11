@@ -31,7 +31,7 @@ const drawPdf = (pages: PDFPage[], customFont: ICustomFonts) => {
   drawContacts(pages[0], options);
   drawSkills(pages[0], options);
   drawEducation(pages[0], options);
-  drawProjects(pages[1], options, customFont.RobotoBoldFont);
+  drawProjects(pages[1], options);
 };
 
 export default drawPdf;

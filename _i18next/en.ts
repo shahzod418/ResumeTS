@@ -33,7 +33,7 @@ export default {
         'Looking for a job as a Junior Frontend Developer in Moscow. ' +
         'Considering a full-time job in the office or remote work.',
       contacts: 'Contacts',
-      projects: 'The source code of my projects is available on GitHub.',
+      projects: 'The source code of my projectsLinks is available on GitHub.',
     },
   },
 };
