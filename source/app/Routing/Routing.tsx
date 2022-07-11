@@ -6,6 +6,7 @@ import Education from '../Education/Education';
 import Skills from '../Skills/Skills';
 import Projects from '../Projects/Projects';
 import Joke from '../Joke/Joke';
+import skills from '../../../_data/skills';
 
 interface Index {
   [index: string]: Function;
@@ -22,7 +23,11 @@ const mappingRoute: Index = {
     />
   ),
   skills: (t: TFunction) => (
-    <Skills header={t('skills.title')} skills={t('skills.description', { returnObjects: true })} />
+    <Skills
+      title={t('skills.title')}
+      skills={skills}
+      skillsTexts={t('skills.description', { returnObjects: true })}
+    />
   ),
   projects: (t: TFunction) => (
     <Projects
