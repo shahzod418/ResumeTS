@@ -38,7 +38,7 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
           onClick={handleClick}
           border="primary"
         >
-          <Card.Body className="overflow-scroll">
+          <Card.Body className="d-flex align-items-center">
             <Card.Text>{text}</Card.Text>
           </Card.Body>
         </Card>
