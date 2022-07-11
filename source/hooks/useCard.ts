@@ -18,7 +18,7 @@ const useCard = (logo: string) => {
 
     if (random === 3 || random === 5 || random === 7 || random === 9) {
       setIsFlipped(true);
-      timeoutID = window.setTimeout(() => setIsFlipped(false), 2000);
+      timeoutID = window.setTimeout(() => setIsFlipped(false), 1000);
     }
 
     return () => {

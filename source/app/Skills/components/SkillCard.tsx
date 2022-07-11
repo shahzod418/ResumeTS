@@ -15,12 +15,12 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
   const { isFlipped, skillLogo, handleClick } = useCard(logo);
 
   const style = {
-    height: 220,
-    width: 220,
+    height: 230,
+    width: 230,
   };
 
   return (
-    <Col className="mb-4">
+    <Col className="mb-5">
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <Card
           style={{ ...style, backgroundColor: 'transparent' }}

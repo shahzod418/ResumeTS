@@ -78,6 +78,11 @@ const skills: ISkill[] = [
   },
   {
     category: SkillsCategory.Tools,
+    id: 'Babel',
+    logo: 'babel.svg',
+  },
+  {
+    category: SkillsCategory.Tools,
     id: 'Axios',
     logo: 'axios.svg',
   },
