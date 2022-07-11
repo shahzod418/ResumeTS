@@ -4,7 +4,7 @@ const skills: ISkillsText = {
   JavaScript:
     'Well versed in the basics of the language. I know how to work with closures, DOM. I understand how Event Loop is organised. I know basic OOP principles and their implementation in JS. Can work with Promise',
   TypeScript:
-    'I know how to use TypeScript in conjunction with React to type components, props and hooks, as well as using it in conjunction with Redux. I know how to set it up and connect it to the project via Webpack and Babel',
+    'I know how to use TypeScript in conjunction with React to type components, props and hooks, as well as using it in conjunction with Redux',
   Bootstrap:
     'I use it in conjunction with React in my projectsLinks. I have a good understanding of how the framework works and how to use it correctly',
   i18next:
