@@ -18,10 +18,7 @@ const DownloadResume: FC<{ text: string }> = ({ text }) => {
         onClick={handleDownload}
         style={{ pointerEvents: isDownload ? 'none' : 'auto' }}
       >
-        <span className="d-inline-block rounded-3">
-          {text}
-          {isDownload && <Spinner animation="border" size="sm" variant={theme.spinner} />}
-        </span>
+        <span className="d-inline-block rounded-3">{text}</span>
       </button>
       <button
         type="button"
