@@ -11,7 +11,7 @@ const DownloadResume: FC = () => {
   const { isDownload, handleDownload } = useDownloadResume();
 
   return (
-    <ButtonGroup className="col-8 col-md-5">
+    <ButtonGroup className="col-8 col-md-6">
       <button
         type="button"
         className={classNames('col-8', 'btn', 'my-3', theme.class.btn)}

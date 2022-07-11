@@ -35,12 +35,16 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
   return (
     <Container ref={ref} className="p-5">
       <Row className="justify-content-center">
-        <Col xxl={3} className="me-3">
+        <Col lg={4} xxl={3} className="me-3">
           <Suspense fallback={<PhotoSpinner />}>
             <Photo photos={photos} />
           </Suspense>
         </Col>
-        <Col xxl={4} className="d-flex flex-column align-items-center align-items-xxl-stretch">
+        <Col
+          lg={5}
+          xxl={4}
+          className="d-flex flex-column align-items-center align-items-lg-stretch"
+        >
           <h1 className={classNames('text-center', 'text-md-start', theme.class.text)}>
             {t('header.title')}
           </h1>
