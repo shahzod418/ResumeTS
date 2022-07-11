@@ -15,12 +15,12 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
   const { isFlipped, skillLogo, handleClick } = useCard(logo);
 
   const style = {
-    height: 230,
-    width: 230,
+    height: 220,
+    width: 220,
   };
 
   return (
-    <Col className="mb-5">
+    <Col>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <Card
           style={{ ...style, backgroundColor: 'transparent' }}
@@ -31,7 +31,7 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
             <Card.Img
               src={skillLogo?.default}
               className="m-auto"
-              style={{ height: 100, width: 100 }}
+              style={{ height: 120, width: 120 }}
             />
           ) : (
             <Spinner animation="border" className="m-auto" variant={theme.spinner} />
@@ -42,7 +42,7 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
           onClick={handleClick}
           className="border-0"
         >
-          <Card.Body className="d-flex align-items-center">
+          <Card.Body className="p-0 d-flex align-items-center">
             <Card.Text>{text}</Card.Text>
           </Card.Body>
         </Card>
