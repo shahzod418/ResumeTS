@@ -58,6 +58,11 @@ const skills: ISkill[] = [
   },
   {
     category: SkillsCategory.Layout,
+    id: 'Pug',
+    logo: 'pug.svg',
+  },
+  {
+    category: SkillsCategory.Layout,
     id: 'Bootstrap',
     logo: 'bootstrap.svg',
   },
@@ -65,6 +70,11 @@ const skills: ISkill[] = [
     category: SkillsCategory.Other,
     id: 'Git',
     logo: 'git.svg',
+  },
+  {
+    category: SkillsCategory.Other,
+    id: 'NPM',
+    logo: 'npm.svg',
   },
   {
     category: SkillsCategory.Tools,
@@ -110,6 +120,11 @@ const skills: ISkill[] = [
     category: SkillsCategory.Other,
     id: 'Fedora',
     logo: 'fedora.svg',
+  },
+  {
+    category: SkillsCategory.Other,
+    id: 'Arch',
+    logo: 'arch.svg',
   },
   {
     category: SkillsCategory.Other,

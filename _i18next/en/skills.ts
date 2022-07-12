@@ -39,6 +39,9 @@ const skills: ISkillsText = {
   Formik: 'I use it to work conveniently with the forms',
   Vercel: 'The main service I use to deploy my projectsLinks. This summary works on it',
   Babel: 'Used in conjunction with Webpack and TypeScript',
+  NPM: 'Basic package installation and removal operations. Configuring simple scripts',
+  Arch: "The second Linux distribution I use. It's quite rare that I prefer it",
+  Pug: 'I rarely use this preprocessor to simplify HTML since I mostly write React projects',
 };
 
 export default skills;
