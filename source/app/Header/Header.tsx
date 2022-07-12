@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import PhotoSpinner from './components/Photo/components/PhotoSpinner';
 import Contacts from './components/Contacts/Contacts';
 import DownloadResume from './components/DownloadResume';
-import meteor from '../../../assets/images/Meteor.svg';
+import hexagon from '../../../assets/images/Hexagon.svg';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IContact from '../../interfaces/IContact';
@@ -27,9 +27,7 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
   const info: IAbout = t('about.description', { returnObjects: true });
 
   useEffect(() => {
-    ref.current.style.backgroundImage = `url('${meteor}')`;
-    ref.current.style.backgroundRepeat = 'no-repeat';
-    ref.current.style.backgroundSize = 'cover';
+    ref.current.style.backgroundImage = `url('${hexagon}')`;
   }, []);
 
   return (
