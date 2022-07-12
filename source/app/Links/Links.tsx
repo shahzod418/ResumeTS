@@ -7,7 +7,7 @@ import { IProjectLinks } from '../../interfaces/IProjectsLinks';
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/github'));
 
 const Links: FC<{ links: IProjectLinks[] | undefined }> = ({ links }) => {
-  const theme = useSelector(selectTheme);
+  const { button, spinner } = useSelector(selectTheme);
 
   if (!links) {
     return null;
@@ -16,8 +16,8 @@ const Links: FC<{ links: IProjectLinks[] | undefined }> = ({ links }) => {
   return (
     <div className="d-flex flex-wrap">
       {links.map(({ id, name, link }) => (
-        <Button key={id} variant={theme.button} className="project-link me-3 mb-0 mb-lg-0">
-          <Suspense fallback={<Spinner animation="border" size="sm" variant={theme.spinner} />}>
+        <Button key={id} variant={button} className="project-link me-3 mb-0 mb-lg-0">
+          <Suspense fallback={<Spinner animation="border" size="sm" variant={spinner} />}>
             <a href={link} target="_blank" className="d-flex align-items-center" rel="noreferrer">
               {name === 'Github' ? <Icon /> : name}
             </a>

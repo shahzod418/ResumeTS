@@ -12,14 +12,16 @@ interface NavCanvasProps {
 }
 
 const NavCanvas: FC<NavCanvasProps> = ({ pages, handleClose }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    class: { border },
+  } = useSelector(selectTheme);
   const { t } = useTranslation();
 
   return (
     <Nav>
       <ListGroup variant="flush" onClick={handleClose}>
         {pages.map((page) => (
-          <ListGroup.Item key={page} className={classNames('bg-transparent', theme.class.border)}>
+          <ListGroup.Item key={page} className={classNames('bg-transparent', border)}>
             <Nav.Item>
               <LinkContainer to={page}>
                 <Nav.Link eventKey={`/${page}`}>{t(`${page}.title`)}</Nav.Link>

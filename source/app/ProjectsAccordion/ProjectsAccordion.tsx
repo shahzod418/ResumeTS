@@ -7,7 +7,9 @@ import selectTheme from '../../store/modules/theme/selectors';
 import { IProject } from '../../interfaces/IProjects';
 
 const ProjectsAccordion: FC<{ projects: IProject[] }> = ({ projects }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    class: { text },
+  } = useSelector(selectTheme);
   const [activeItem, setActiveItem] = useState<string | null>(projects[0].id);
 
   const handleClick = (id: string) => () => {
@@ -24,11 +26,7 @@ const ProjectsAccordion: FC<{ projects: IProject[] }> = ({ projects }) => {
         const { id, title } = project;
 
         return (
-          <Accordion.Item
-            key={id}
-            eventKey={id}
-            className={classNames('bg-transparent', theme.class.text)}
-          >
+          <Accordion.Item key={id} eventKey={id} className={classNames('bg-transparent', text)}>
             <Accordion.Header onClick={handleClick(id)}>{title}</Accordion.Header>
             <Accordion.Body>
               <Project project={project} />

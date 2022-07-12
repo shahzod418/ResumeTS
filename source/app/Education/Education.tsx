@@ -13,11 +13,13 @@ interface EducationProps {
 }
 
 const Education: FC<EducationProps> = ({ title, info }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    class: { text },
+  } = useSelector(selectTheme);
   const { higher, additional } = info;
 
   return (
-    <Container className={classNames('p-4', 'p-md-5', theme.class.text)}>
+    <Container className={classNames('p-4', 'p-md-5', text)}>
       <Row>
         <h2 className="d-block d-sm-none mb-3">{title}</h2>
       </Row>

@@ -7,11 +7,13 @@ import IAbout from '../../interfaces/IAbout';
 const excludeKeys = ['firstParagraph', 'secondParagraph', 'thirdParagraph'];
 
 const InfoTable: FC<{ info: IAbout }> = ({ info }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    class: { text },
+  } = useSelector(selectTheme);
 
   return (
     <Table>
-      <tbody className={theme.class.text}>
+      <tbody className={text}>
         {Object.keys(info).map((key) => {
           if (!excludeKeys.includes(key)) {
             return (

@@ -6,13 +6,13 @@ import selectTheme from '../../store/modules/theme/selectors';
 import IAuthor from '../../interfaces/IAuthor';
 
 const Footer: FC<{ author: IAuthor }> = ({ author }) => {
-  const theme = useSelector(selectTheme);
+  const { footer } = useSelector(selectTheme);
 
   return (
     <Container
       fluid
       className={classNames('ps-3', 'pt-1', 'pb-1')}
-      style={{ backgroundColor: theme.footer }}
+      style={{ backgroundColor: footer }}
     >
       <Row className="align-items-center">
         <Col className="text-white text-center">

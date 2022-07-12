@@ -10,7 +10,7 @@ import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 
 const TopPanel: FC<{ pages: string[] }> = ({ pages }) => {
-  const theme = useSelector(selectTheme);
+  const { navbar } = useSelector(selectTheme);
   const { isMobile } = useDevice();
 
   return (
@@ -21,7 +21,7 @@ const TopPanel: FC<{ pages: string[] }> = ({ pages }) => {
         'sticky-top': isMobile,
         'position-static': !isMobile,
       })}
-      style={{ background: theme.navbar }}
+      style={{ background: navbar }}
     >
       <Container className="position-static">
         <div className="w-25">

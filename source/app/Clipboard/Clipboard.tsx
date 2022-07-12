@@ -8,14 +8,16 @@ const ClipboardIcon = lazy(() => import('react-bootstrap-icons/dist/icons/clipbo
 const ClipboardCheckIcon = lazy(() => import('react-bootstrap-icons/dist/icons/clipboard-check'));
 
 const Clipboard: FC<{ popup: string }> = ({ popup }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    popup: { text },
+  } = useSelector(selectTheme);
   const { isCopy, handleClipboard } = useClipboard();
 
   return (
     <Container className="text-white py-2 px-3">
       <Row className="align-items-center">
         <Col xs="auto">
-          <span className={theme.popup.text}>{popup}</span>
+          <span className={text}>{popup}</span>
         </Col>
         <Col>
           <Button

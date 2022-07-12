@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Links from '../Links/Links';
-import Gif from '../Gif/Gif';
 import { IProject } from '../../interfaces/IProjects';
 import projectsLinks from '../../../_data/projectsLinks';
+import LazyGif from '../../hoсs/LazyGif';
 
 const Project: FC<{ project: IProject }> = ({ project }) => {
   const { id, title, shortDescription, stack, description } = project;
@@ -19,7 +19,11 @@ const Project: FC<{ project: IProject }> = ({ project }) => {
             <i>{stack}</i>
           </p>
         </Col>
-        <Gif id={project.id} />
+        <Col lg={7}>
+          <div className="position-relative">
+            <LazyGif name={id} />
+          </div>
+        </Col>
       </Row>
       <Row>
         <div dangerouslySetInnerHTML={{ __html: `${description}` }} />

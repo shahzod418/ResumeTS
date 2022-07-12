@@ -13,9 +13,7 @@ interface Index {
 }
 
 const mappingRoute: Index = {
-  about: (t: TFunction) => (
-    <About title={t('about.title')} info={t('about.description', { returnObjects: true })} />
-  ),
+  about: (t: TFunction) => <About title={t('about.title')} />,
   education: (t: TFunction) => (
     <Education
       title={t('education.title')}

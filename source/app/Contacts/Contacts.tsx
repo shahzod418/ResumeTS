@@ -7,10 +7,14 @@ import selectTheme from '../../store/modules/theme/selectors';
 import IContact from '../../interfaces/IContact';
 
 const Contacts: FC<{ contacts: IContact[] }> = ({ contacts }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    spinner,
+    popup: { background, color },
+    class: { contact },
+  } = useSelector(selectTheme);
 
-  const contentStyle = { background: theme.popup.background, borderRadius: '0.25rem' };
-  const arrowStyle = { color: theme.popup.color };
+  const contentStyle = { background, borderRadius: '0.25rem' };
+  const arrowStyle = { color };
 
   return (
     <div className="d-flex">
@@ -19,8 +23,8 @@ const Contacts: FC<{ contacts: IContact[] }> = ({ contacts }) => {
           key={type}
           trigger={
             <Button size="lg" className="bg-transparent border-0">
-              <Suspense fallback={<Spinner animation="border" size="sm" variant={theme.spinner} />}>
-                <a href={link} target="_blank" className={theme.class.contact} rel="noreferrer">
+              <Suspense fallback={<Spinner animation="border" size="sm" variant={spinner} />}>
+                <a href={link} target="_blank" className={contact} rel="noreferrer">
                   {lazy}
                 </a>
               </Suspense>

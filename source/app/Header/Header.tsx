@@ -20,7 +20,9 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ contacts, photos }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    class: { text },
+  } = useSelector(selectTheme);
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null!);
 
@@ -33,7 +35,7 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
   }, []);
 
   return (
-    <Container fluid ref={ref} className={classNames('p-3', 'p-md-5', theme.class.text)}>
+    <Container fluid ref={ref} className={classNames('p-3', 'p-md-5', text)}>
       <Container>
         <Row className="justify-content-center">
           <Col lg={4} xxl={3} className="mb-3">

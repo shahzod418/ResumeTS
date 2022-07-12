@@ -9,7 +9,10 @@ import selectTheme from '../../store/modules/theme/selectors';
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/list'));
 
 const NavOffCanvas: FC<{ pages: string[] }> = ({ pages }) => {
-  const theme = useSelector(selectTheme);
+  const {
+    background,
+    class: { text },
+  } = useSelector(selectTheme);
   const { show, handleShow, handleClose } = useShowCanvas();
   const { t } = useTranslation();
 
@@ -26,10 +29,10 @@ const NavOffCanvas: FC<{ pages: string[] }> = ({ pages }) => {
         placement="end"
         scroll
         backdrop
-        style={{ backgroundColor: theme.background }}
+        style={{ backgroundColor: background }}
       >
         <Offcanvas.Header>
-          <Offcanvas.Title className={theme.class.text}>{t('canvas')}</Offcanvas.Title>
+          <Offcanvas.Title className={text}>{t('canvas')}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <NavCanvas pages={pages} handleClose={handleClose} />
