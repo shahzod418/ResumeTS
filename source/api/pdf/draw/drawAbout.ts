@@ -8,7 +8,11 @@ const drawAbout = (page: PDFPage, options: IOptions) => {
 
   const about: IAbout = i18n.t('about.description', { returnObjects: true });
 
-  const aboutDescription = about.description.split('\n').join(' ');
+  const aboutProgrammer = about.firstParagraph!.split('\n')[0];
+
+  const aboutSecondParagraph = about.secondParagraph!.split('\n');
+
+  const aboutWork = `${aboutSecondParagraph[0]} ${aboutSecondParagraph[2]}`;
 
   const aboutNationality = `${about.nationality.title}: ${about.nationality.text}`;
 
@@ -37,9 +41,14 @@ const drawAbout = (page: PDFPage, options: IOptions) => {
     y: height - 160,
   });
 
-  page.drawText(aboutDescription, {
+  page.drawText(aboutProgrammer, {
     ...options,
     y: height - 210,
+  });
+
+  page.drawText(aboutWork, {
+    ...options,
+    y: height - 230,
   });
 };
 
