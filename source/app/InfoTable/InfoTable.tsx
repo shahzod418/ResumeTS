@@ -10,7 +10,7 @@ const InfoTable: FC<{ info: IAbout }> = ({ info }) => {
   const theme = useSelector(selectTheme);
 
   return (
-    <Table responsive>
+    <Table>
       <tbody className={theme.class.text}>
         {Object.keys(info).map((key) => {
           if (!excludeKeys.includes(key)) {
