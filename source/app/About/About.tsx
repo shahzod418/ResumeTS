@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import classNames from 'classnames';
+import { nanoid } from 'nanoid';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IAbout from '../../interfaces/IAbout';
 import developerImage from '../../../assets/images/developer.png';
 import catImage from '../../../assets/images/cat.png';
 import workImage from '../../../assets/images/work.png';
-import { nanoid } from 'nanoid';
 
 interface AboutProps {
   title: string;
