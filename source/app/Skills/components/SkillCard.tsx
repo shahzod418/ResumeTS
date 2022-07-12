@@ -27,7 +27,7 @@ const SkillCard: FC<SkillCardProps> = ({ title, logo, text }) => {
           style={{ ...style, backgroundColor: 'transparent' }}
           onClick={handleClick}
           onMouseEnter={handleMouseEnter}
-          className="border-0"
+          className="border-0 d-flex"
         >
           {skillLogo ? (
             <>
@@ -36,7 +36,7 @@ const SkillCard: FC<SkillCardProps> = ({ title, logo, text }) => {
                 className="m-auto"
                 style={{ height: 120, width: 120 }}
               />
-              <Card.Body>
+              <Card.Body className="p-0 m-0 pt-3">
                 <Card.Title className="text-center">{title}</Card.Title>
               </Card.Body>
             </>
@@ -50,7 +50,7 @@ const SkillCard: FC<SkillCardProps> = ({ title, logo, text }) => {
           onMouseLeave={handleMouseLeave}
           className="border-0"
         >
-          <Card.Body className="p-0 d-flex align-items-center">
+          <Card.Body className="p-0">
             <Card.Text>{text}</Card.Text>
           </Card.Body>
         </Card>

@@ -2,7 +2,7 @@ import { ISkillsText } from '../../source/interfaces/ISkill';
 
 const skills: ISkillsText = {
   JavaScript:
-    'Well versed in the basics of the language. I know how to work with closures, DOM. I understand how Event Loop is organised. I know basic OOP principles and their implementation in JS. Can work with Promise',
+    'Well versed in the basics of the language. I know how to work with closures, DOM. I understand how Event Loop is organised. I know basic OOP principles',
   TypeScript:
     'I know how to use TypeScript in conjunction with React to type components, props and hooks, as well as using it in conjunction with Redux',
   Bootstrap:
@@ -19,7 +19,7 @@ const skills: ISkillsText = {
     'Know how to write basic configuration, which is enough to run a project in conjunction with TypeScript and SASS',
   SASS: 'Can layout using this preprocessor',
   HTML: 'Understand the principles of semantics, where tags are used and how to include styles and scripts',
-  CSS: 'Well versed in Flex and Grid layout, as well as CSS functions. I know how to work with media queries, prefixes and create adaptive layout',
+  CSS: 'Well versed in Flex and Grid layout. I know how to work with media queries, prefixes and create adaptive layout',
   NodeJS:
     'Know the basics of building server applications using REST API architecture. Can work with various Node.JS modules',
   Axios: 'I use it for easy use of HTTP queries, but I can also work with normal fetch',
