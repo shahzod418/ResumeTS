@@ -12,7 +12,7 @@ export default interface IAbout {
     title: string;
     text: string;
   };
-  firstParagraph: string;
-  secondParagraph: string;
-  thirdParagraph: string;
+  firstParagraph?: string;
+  secondParagraph?: string;
+  thirdParagraph?: string;
 }

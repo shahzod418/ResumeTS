@@ -7,15 +7,21 @@ import IAbout from '../../interfaces/IAbout';
 import developerImage from '../../../assets/images/developer.png';
 import catImage from '../../../assets/images/cat.png';
 import workImage from '../../../assets/images/work.png';
+import { nanoid } from 'nanoid';
 
 interface AboutProps {
   title: string;
   info: IAbout;
 }
 
+const aboutTemplate: { [index: string]: string } = {
+  firstParagraph: developerImage,
+  secondParagraph: workImage,
+  thirdParagraph: catImage,
+};
+
 const About: FC<AboutProps> = ({ title, info }) => {
   const theme = useSelector(selectTheme);
-  const { firstParagraph, secondParagraph, thirdParagraph } = info;
 
   const style = { width: '100%', height: 'auto' };
 
@@ -24,30 +30,21 @@ const About: FC<AboutProps> = ({ title, info }) => {
       <Row>
         <h2 className="d-block d-sm-none mb-3">{title}</h2>
       </Row>
-      <Row className="align-items-center flex-row-reverse">
-        <Col md={6} className="mb-3">
-          <Image src={developerImage} style={style} />
-        </Col>
-        <Col md={6} className="mb-3">
-          <p>{firstParagraph}</p>
-        </Col>
-      </Row>
-      <Row className="align-items-center">
-        <Col md={6} className="mb-3">
-          <Image src={workImage} style={style} />
-        </Col>
-        <Col md={6} className="mb-3">
-          <p>{secondParagraph}</p>
-        </Col>
-      </Row>
-      <Row className="align-items-center flex-row-reverse">
-        <Col md={6} className="mb-3">
-          <Image src={catImage} style={style} />
-        </Col>
-        <Col md={6}>
-          <p>{thirdParagraph}</p>
-        </Col>
-      </Row>
+      {Object.keys(aboutTemplate).map((paragraph, index) => (
+        <Row
+          key={paragraph}
+          className={classNames('align-items-center', { 'flex-row-reverse': index % 2 === 0 })}
+        >
+          <Col md={6} className="mb-4">
+            <Image src={aboutTemplate[paragraph]} style={style} />
+          </Col>
+          <Col md={6} className="mb-4">
+            {info[paragraph].split('\n').map((text: string) => (
+              <p key={nanoid()}>{text}</p>
+            ))}
+          </Col>
+        </Row>
+      ))}
     </Container>
   );
 };
