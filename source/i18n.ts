@@ -5,7 +5,7 @@ import ru from '../_i18next/ru';
 import en from '../_i18next/en';
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
-  lng: 'ru',
+  fallbackLng: 'en',
   resources: {
     ru,
     en,

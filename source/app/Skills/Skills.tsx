@@ -38,9 +38,9 @@ const Skills: FC<SkillsProps> = ({ title, skills, skillsTexts }) => {
                 ))}
               </Tabs>
             </Row>
-            <Row className="row-cols-auto d-flex justify-content-center">
+            <Row className="row-cols-auto d-flex justify-content-center pt-5">
               {skillsList.map(({ id, logo }) => (
-                <SkillCard key={id} logo={logo} text={skillsTexts[id]} />
+                <SkillCard key={id} title={id} logo={logo} text={skillsTexts[id]} />
               ))}
             </Row>
           </Container>

@@ -6,11 +6,12 @@ import selectTheme from '../../../store/modules/theme/selectors';
 import useCard from '../../../hooks/useCard';
 
 interface SkillCardProps {
+  title: string;
   logo: string;
   text: string;
 }
 
-const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
+const SkillCard: FC<SkillCardProps> = ({ title, logo, text }) => {
   const theme = useSelector(selectTheme);
   const { isFlipped, skillLogo, handleClick, handleMouseLeave, handleMouseEnter } = useCard(logo);
 
@@ -29,11 +30,16 @@ const SkillCard: FC<SkillCardProps> = ({ logo, text }) => {
           className="border-0"
         >
           {skillLogo ? (
-            <Card.Img
-              src={skillLogo?.default}
-              className="m-auto"
-              style={{ height: 120, width: 120 }}
-            />
+            <>
+              <Card.Img
+                src={skillLogo?.default}
+                className="m-auto"
+                style={{ height: 120, width: 120 }}
+              />
+              <Card.Body>
+                <Card.Title className="text-center">{title}</Card.Title>
+              </Card.Body>
+            </>
           ) : (
             <Spinner animation="border" className="m-auto" variant={theme.spinner} />
           )}
