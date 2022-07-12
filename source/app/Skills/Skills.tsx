@@ -24,7 +24,7 @@ const Skills: FC<SkillsProps> = ({ title, skills, skillsTexts }) => {
   const skillsList = skills.filter(mappingFilter[filter]);
 
   return (
-    <Container className={classNames('p-5', theme.class.text)}>
+    <Container className={classNames('p-4', 'p-md-5', theme.class.text)}>
       <Row>
         <h2 className="d-block d-sm-none mb-3">{title}</h2>
       </Row>

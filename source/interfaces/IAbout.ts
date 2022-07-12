@@ -12,5 +12,5 @@ export default interface IAbout {
     title: string;
     text: string;
   };
-  description: string;
+  firstParagraph: string;
 }

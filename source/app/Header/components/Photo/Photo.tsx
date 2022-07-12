@@ -3,7 +3,7 @@ import { Carousel, Image } from 'react-bootstrap';
 
 const Photo: FC<{ photos: string[] }> = ({ photos }) => {
   return (
-    <div style={{ height: '400px', width: '280px' }} className="mx-auto">
+    <div style={{ height: 'auto', width: '85%' }} className="mx-auto">
       <Carousel fade touch controls={false} indicators={false} interval={2500}>
         {photos.map((photo) => (
           <Carousel.Item key={photo}>

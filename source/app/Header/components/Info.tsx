@@ -4,14 +4,16 @@ import useSelector from '../../../store/hooks/useSelector';
 import selectTheme from '../../../store/modules/theme/selectors';
 import IAbout from '../../../interfaces/IAbout';
 
-const AboutTable: FC<{ info: IAbout }> = ({ info }) => {
+const excludeKeys = ['firstParagraph'];
+
+const Info: FC<{ info: IAbout }> = ({ info }) => {
   const theme = useSelector(selectTheme);
 
   return (
     <Table responsive>
       <tbody className={theme.class.text}>
         {Object.keys(info).map((key) => {
-          if (key !== 'description') {
+          if (!excludeKeys.includes(key)) {
             return (
               <tr key={key}>
                 <td>{info[key].title}</td>
@@ -27,4 +29,4 @@ const AboutTable: FC<{ info: IAbout }> = ({ info }) => {
   );
 };
 
-export default AboutTable;
+export default Info;

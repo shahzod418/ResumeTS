@@ -9,7 +9,7 @@ import hexagon from '../../../assets/images/Hexagon.svg';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IContact from '../../interfaces/IContact';
-import AboutTable from './components/AboutTable';
+import Info from './components/Info';
 import IAbout from '../../interfaces/IAbout';
 
 const Photo = lazy(() => import('./components/Photo/Photo'));
@@ -28,30 +28,32 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
 
   useEffect(() => {
     ref.current.style.backgroundImage = `url('${hexagon}')`;
+    ref.current.style.backgroundRepeat = 'no-repeat';
+    ref.current.style.backgroundSize = 'cover';
   }, []);
 
   return (
-    <Container ref={ref} className="p-5">
-      <Row className="justify-content-center">
-        <Col lg={4} xxl={3} className="me-3">
-          <Suspense fallback={<PhotoSpinner />}>
-            <Photo photos={photos} />
-          </Suspense>
-        </Col>
-        <Col
-          lg={5}
-          xxl={4}
-          className="d-flex flex-column align-items-center align-items-lg-stretch"
-        >
-          <h1 className={classNames('text-center', 'text-md-start', theme.class.text)}>
-            {t('header.title')}
-          </h1>
-          <h6 className={theme.class.text}>{t('header.caption')}</h6>
-          <Contacts contacts={contacts} />
-          <DownloadResume />
-          <AboutTable info={info} />
-        </Col>
-      </Row>
+    <Container fluid ref={ref} className={classNames('p-3', 'p-md-5', theme.class.text)}>
+      <Container>
+        <Row className="justify-content-center">
+          <Col lg={4} xxl={3} className="mb-3">
+            <Suspense fallback={<PhotoSpinner />}>
+              <Photo photos={photos} />
+            </Suspense>
+          </Col>
+          <Col
+            lg={5}
+            xxl={4}
+            className="d-flex flex-column align-items-center align-items-lg-stretch"
+          >
+            <h1 className="text-center text-md-start">{t('header.title')}</h1>
+            <h6>{t('header.caption')}</h6>
+            <Contacts contacts={contacts} />
+            <DownloadResume />
+            <Info info={info} />
+          </Col>
+        </Row>
+      </Container>
     </Container>
   );
 };
