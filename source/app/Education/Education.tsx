@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import classNames from 'classnames';
-import Higher from './components/Higher/Higher';
-import Additional from './components/Additional/Additional';
+import Higher from '../Higher/Higher';
+import Additional from '../Additional/Additional';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IEducation from '../../interfaces/IEducation';

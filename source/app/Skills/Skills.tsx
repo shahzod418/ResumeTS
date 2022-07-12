@@ -3,7 +3,7 @@ import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
 import classNames from 'classnames';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
-import SkillCard from './components/SkillCard';
+import SkillCard from '../SkillCard/SkillCard';
 import ISkill, { ISkillsText } from '../../interfaces/ISkill';
 import mappingFilter from '../../api/mappingFilter';
 

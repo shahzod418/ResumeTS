@@ -2,17 +2,17 @@ import React, { FC, lazy, Suspense, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-import PhotoSpinner from './components/Photo/components/PhotoSpinner';
-import Contacts from './components/Contacts/Contacts';
-import DownloadResume from './components/DownloadResume';
+import PhotoSpinner from '../PhotoSpinner/PhotoSpinner';
+import Contacts from '../Contacts/Contacts';
+import DownloadResume from '../DownloadResume/DownloadResume';
 import hexagon from '../../../assets/images/Hexagon.svg';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import IContact from '../../interfaces/IContact';
-import Info from './components/Info';
+import InfoTable from '../InfoTable/InfoTable';
 import IAbout from '../../interfaces/IAbout';
 
-const Photo = lazy(() => import('./components/Photo/Photo'));
+const Photo = lazy(() => import('../Photo/Photo'));
 
 interface HeaderProps {
   contacts: IContact[];
@@ -50,7 +50,7 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
             <h6>{t('header.caption')}</h6>
             <Contacts contacts={contacts} />
             <DownloadResume />
-            <Info info={info} />
+            <InfoTable info={info} />
           </Col>
         </Row>
       </Container>

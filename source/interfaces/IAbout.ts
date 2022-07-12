@@ -13,4 +13,6 @@ export default interface IAbout {
     text: string;
   };
   firstParagraph: string;
+  secondParagraph: string;
+  thirdParagraph: string;
 }

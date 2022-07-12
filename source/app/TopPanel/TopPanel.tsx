@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
-import Language from './components/Language';
+import Language from '../Language/Language';
 import languages from '../../../_data/languages';
-import NavOffCanvas from './components/NavOffCanvas/NavOffCanvas';
+import NavOffCanvas from '../NavOffCanvas/NavOffCanvas';
 import useDevice from '../../hooks/useDevice';
-import Theme from './components/Theme';
+import Theme from '../Theme/Theme';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 

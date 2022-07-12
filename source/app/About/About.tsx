@@ -15,7 +15,7 @@ interface AboutProps {
 
 const About: FC<AboutProps> = ({ title, info }) => {
   const theme = useSelector(selectTheme);
-  const { firstParagraph } = info;
+  const { firstParagraph, secondParagraph, thirdParagraph } = info;
 
   const style = { width: '100%', height: 'auto' };
 
@@ -37,7 +37,7 @@ const About: FC<AboutProps> = ({ title, info }) => {
           <Image src={workImage} style={style} />
         </Col>
         <Col md={6} className="mb-3">
-          <p>{firstParagraph}</p>
+          <p>{secondParagraph}</p>
         </Col>
       </Row>
       <Row className="align-items-center flex-row-reverse">
@@ -45,7 +45,7 @@ const About: FC<AboutProps> = ({ title, info }) => {
           <Image src={catImage} style={style} />
         </Col>
         <Col md={6}>
-          <p>{firstParagraph}</p>
+          <p>{thirdParagraph}</p>
         </Col>
       </Row>
     </Container>

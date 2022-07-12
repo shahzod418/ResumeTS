@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
 import classNames from 'classnames';
-import ProjectsAccordion from './components/ProjectsAccordion';
+import ProjectsAccordion from '../ProjectsAccordion/ProjectsAccordion';
 import IProjects from '../../interfaces/IProjects';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
