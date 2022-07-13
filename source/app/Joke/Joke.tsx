@@ -14,7 +14,7 @@ const Joke: FC<{ title: string }> = ({ title }) => {
       <Row>
         <h2 className={text}>{title}</h2>
       </Row>
-      <Row>
+      <Row className="position-relative" style={{ minHeight: 200 }}>
         <LazyGif name="rick-astley-never-gonna-give-you-up" />
       </Row>
     </Container>
