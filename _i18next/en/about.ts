@@ -25,7 +25,7 @@ const about: IAbout = {
   secondParagraph:
     'I am a responsible employee who always performs the assigned tasks.\n' +
     'At work I am always focused on the process, I am not distracted by "going out for a smoke break", as I do not smoke or drink.\n' +
-    'In addition, I am a very tactful person, so I am never late.',
+    'In addition, I am a very punctual person, so I am never late.',
   thirdParagraph:
     'I got my basic knowledge of JavaScript from the Hexlet Programming School, where I studied as part of a self-study on a subscription basis.\n' +
     'I accessed their courses in the following ways: I wrote posts about learning and programming on their block, for which I was given all the materials available from them. I still publish something there to this day, as I love to write small articles.\n' +
