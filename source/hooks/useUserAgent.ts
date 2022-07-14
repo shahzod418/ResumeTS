@@ -1,10 +1,11 @@
 import { useRef } from 'react';
 
 const useUserAgent = () => {
-  const { current } = useRef(navigator.userAgent);
+  const userAgent = useRef(navigator.userAgent).current;
+  const vendor = useRef(navigator.vendor).current;
   const regexp = /Mobile.*Safari/;
 
-  const isIosSafari = regexp.test(current);
+  const isIosSafari = regexp.test(userAgent) && vendor === 'Apple Computer, Inc.';
 
   return { isIosSafari };
 };
