@@ -22,7 +22,9 @@ const AboutTemplate = () => {
       {Object.keys(aboutTemplate).map((paragraph, index) => (
         <Row
           key={paragraph}
-          className={classNames('align-items-center', { 'flex-row-reverse': index % 2 === 0 })}
+          className={classNames('align-items-center', {
+            'flex-row-reverse': index % 2 === 0,
+          })}
         >
           <Col md={6} className="position-relative mb-4">
             <LazyImage name={aboutTemplate[paragraph]} />

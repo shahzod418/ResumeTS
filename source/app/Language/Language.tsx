@@ -3,11 +3,13 @@ import { Button, ListGroup, Spinner } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import Popup from 'reactjs-popup';
 import ILanguage from '../../interfaces/ILanguage';
+import useDevice from '../../hooks/useDevice';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/translate'));
 
 const Language: FC<{ languages: ILanguage[] }> = ({ languages }) => {
   const { i18n } = useTranslation();
+  const { isMobile } = useDevice();
   const [language, setLanguage] = useState(i18n.language);
 
   const handleChangeLanguage = (short: string) => async () => {
@@ -20,7 +22,7 @@ const Language: FC<{ languages: ILanguage[] }> = ({ languages }) => {
   return (
     <Popup
       trigger={
-        <Button variant="outline-light">
+        <Button size={isMobile ? 'sm' : undefined} variant="outline-light">
           <Suspense fallback={<Spinner animation="border" size="sm" />}>
             <Icon />
           </Suspense>

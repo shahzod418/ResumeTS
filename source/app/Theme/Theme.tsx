@@ -4,6 +4,7 @@ import useSelector from '../../store/hooks/useSelector';
 import useDispatch from '../../store/hooks/useDispatch';
 import { changeTheme } from '../../store/modules/theme/actions';
 import selectTheme from '../../store/modules/theme/selectors';
+import useDevice from '../../hooks/useDevice';
 
 const Sun = lazy(() => import('react-bootstrap-icons/dist/icons/sun'));
 const Moon = lazy(() => import('react-bootstrap-icons/dist/icons/moon'));
@@ -11,6 +12,7 @@ const Moon = lazy(() => import('react-bootstrap-icons/dist/icons/moon'));
 const Theme = () => {
   const { id, background } = useSelector(selectTheme);
   const dispatch = useDispatch();
+  const { isMobile } = useDevice();
   const { current } = useRef(document.body);
 
   useEffect(() => {
@@ -24,7 +26,11 @@ const Theme = () => {
   };
 
   return (
-    <Button variant="outline-light me-3" onClick={handleChangeTheme}>
+    <Button
+      size={isMobile ? 'sm' : undefined}
+      variant="outline-light me-3"
+      onClick={handleChangeTheme}
+    >
       <Suspense fallback={<Spinner animation="border" size="sm" />}>
         {id === 'light' ? <Sun /> : <Moon />}
       </Suspense>

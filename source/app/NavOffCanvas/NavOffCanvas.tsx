@@ -5,6 +5,7 @@ import useShowCanvas from '../../hooks/useShowCanvas';
 import NavCanvas from '../NavCanvas/NavCanvas';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
+import useDevice from '../../hooks/useDevice';
 
 const Icon = lazy(() => import('react-bootstrap-icons/dist/icons/list'));
 
@@ -15,10 +16,17 @@ const NavOffCanvas: FC<{ pages: string[] }> = ({ pages }) => {
   } = useSelector(selectTheme);
   const { show, handleShow, handleClose } = useShowCanvas();
   const { t } = useTranslation();
+  const { isMobile } = useDevice();
 
   return (
     <>
-      <Button variant="outline-light" active={show} onClick={handleShow} className="ms-3">
+      <Button
+        size={isMobile ? 'sm' : undefined}
+        variant="outline-light"
+        active={show}
+        onClick={handleShow}
+        className="ms-3"
+      >
         <Suspense fallback={<Spinner animation="border" size="sm" />}>
           <Icon />
         </Suspense>

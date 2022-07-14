@@ -11,6 +11,9 @@ import selectTheme from '../../store/modules/theme/selectors';
 import IContact from '../../interfaces/IContact';
 import InfoTable from '../InfoTable/InfoTable';
 import IAbout from '../../interfaces/IAbout';
+import useUserAgent from '../../hooks/useUserAgent';
+import DownloadResumeOnSafariIos from '../DownloadResumeOnSafariIos/DownloadResumeOnSafariIos';
+import useDevice from '../../hooks/useDevice';
 
 const Photo = lazy(() => import('../Photo/Photo'));
 
@@ -25,14 +28,20 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
   } = useSelector(selectTheme);
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null!);
+  const { isIosSafari } = useUserAgent();
+  const { isMobile } = useDevice();
 
   const info: IAbout = t('about.description', { returnObjects: true });
 
   useEffect(() => {
-    ref.current.style.backgroundImage = `url('${hexagon}')`;
-    ref.current.style.backgroundRepeat = 'no-repeat';
-    ref.current.style.backgroundSize = 'cover';
-  }, []);
+    if (!isMobile) {
+      ref.current.style.backgroundImage = `url('${hexagon}')`;
+      ref.current.style.backgroundRepeat = 'no-repeat';
+      ref.current.style.backgroundSize = 'cover';
+    } else {
+      ref.current.style.background = 'none';
+    }
+  }, [isMobile]);
 
   return (
     <Container fluid ref={ref} className={classNames('p-3', 'p-md-5', text)}>
@@ -51,7 +60,7 @@ const Header: FC<HeaderProps> = ({ contacts, photos }) => {
             <h1 className="text-center text-md-start">{t('header.title')}</h1>
             <h6>{t('header.caption')}</h6>
             <Contacts contacts={contacts} />
-            <DownloadResume />
+            {isIosSafari ? <DownloadResumeOnSafariIos /> : <DownloadResume />}
             <InfoTable info={info} />
           </Col>
         </Row>
