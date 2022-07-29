@@ -23,8 +23,8 @@ const drawEducation = (page: PDFPage, options: IOptions) => {
     .join('\n')}`;
 
   page.drawLine({
-    start: { x: 25, y: height - 775 },
-    end: { x: width - 25, y: height - 775 },
+    start: { x: 25, y: height - 795 },
+    end: { x: width - 25, y: height - 795 },
     thickness: 1,
     color: rgb(0.8, 0.8, 0.8),
     opacity: 0.75,

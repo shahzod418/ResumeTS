@@ -1,10 +1,10 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from "react";
 import { nanoid } from 'nanoid';
 import StoreContext from '../context/StoreContext';
 
 const useSelector = (selector: Function) => {
   const componentId = useRef(nanoid());
-  const store = useContext<any>(StoreContext);
+  const store = useContext(StoreContext);
   const [value, setValue] = useState(selector(store.state));
 
   useEffect(() => {

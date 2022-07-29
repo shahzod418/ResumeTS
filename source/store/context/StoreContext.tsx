@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const StoreContext = createContext<any>(null);
+const StoreContext = createContext(null);
 
 export default StoreContext;

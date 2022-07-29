@@ -16,8 +16,15 @@ const Theme = () => {
   const { current } = useRef(document.body);
 
   useEffect(() => {
+    if (document.cookie) {
+      dispatch(changeTheme(document.cookie));
+    }
+  }, []);
+
+  useEffect(() => {
     current.style.backgroundColor = background;
     current.id = id;
+    document.cookie = id;
   }, [id]);
 
   const handleChangeTheme = () => {

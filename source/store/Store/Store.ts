@@ -1,9 +1,4 @@
-import IThemeAction from '../../interfaces/IThemeAction';
 import IStoreState from '../../interfaces/IStoreState';
-
-interface Index {
-  [index: string]: Function;
-}
 
 class Store {
   private static instance: Store;
@@ -12,7 +7,7 @@ class Store {
 
   state: IStoreState | undefined;
 
-  subscribers: Index = {};
+  subscribers = {};
 
   private constructor(rootReducer: Function) {
     this.rootReducer = rootReducer;
@@ -27,12 +22,12 @@ class Store {
     return Store.instance;
   }
 
-  public subscribe(key: string, callback: Function) {
+  public subscribe<KeyType extends keyof typeof this.subscribers>(key: KeyType, callback) {
     this.subscribers[key] = callback;
     this.subscribers[key](this.state);
   }
 
-  public unsubscribe(key: string) {
+  public unsubscribe(key: keyof typeof this.subscribers) {
     delete this.subscribers[key];
   }
 

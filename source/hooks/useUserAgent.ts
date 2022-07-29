@@ -2,10 +2,9 @@ import { useRef } from 'react';
 
 const useUserAgent = () => {
   const userAgent = useRef(navigator.userAgent).current;
-  const regexpSafari = /^((?!chrome|android|crios|fxios).)*safari/i;
-  const regexpMobileSafari = /Mobile.*Safari/;
+  const regexp = /^((?!chrome|android|crios|fxios).)*mobile.*safari/i;
 
-  const isIosSafari = regexpSafari.test(userAgent) && regexpMobileSafari.test(userAgent);
+  const isIosSafari = regexp.test(userAgent);
 
   return { isIosSafari };
 };

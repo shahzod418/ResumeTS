@@ -1,4 +1,4 @@
-export enum SkillsCategory {
+export const enum SkillsCategory {
   Frontend = 'Frontend',
   Backend = 'Backend',
   Testing = 'Testing',

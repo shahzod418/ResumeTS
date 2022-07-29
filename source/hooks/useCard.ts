@@ -2,7 +2,7 @@ import { MouseEventHandler, useEffect, useState, useCallback } from 'react';
 
 const useCard = (logo: string) => {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
-  const [skillLogo, setSkillLogo] = useState<any>();
+  const [skillLogo, setSkillLogo] = useState<{ default: string }>();
 
   const handleClick: MouseEventHandler = useCallback(() => {
     setIsFlipped((prevState) => !prevState);

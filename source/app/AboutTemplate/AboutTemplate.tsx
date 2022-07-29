@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import IAbout from '../../interfaces/IAbout';
 import LazyImage from '../../hoсs/LazyImage';
 
-const aboutTemplate: { [index: string]: string } = {
+const aboutTemplate = {
   firstParagraph: 'developer',
   secondParagraph: 'work',
   thirdParagraph: 'cat',
@@ -19,7 +19,7 @@ const AboutTemplate = () => {
 
   return (
     <>
-      {Object.keys(aboutTemplate).map((paragraph, index) => (
+      {(Object.keys(aboutTemplate) as (keyof typeof aboutTemplate)[]).map((paragraph, index) => (
         <Row
           key={paragraph}
           className={classNames('align-items-center', {
@@ -30,7 +30,7 @@ const AboutTemplate = () => {
             <LazyImage name={aboutTemplate[paragraph]} />
           </Col>
           <Col md={6} className="mb-4">
-            {info[paragraph].split('\n').map((text: string) => (
+            {info[paragraph]?.split('\n').map((text: string) => (
               <p key={nanoid()}>{text}</p>
             ))}
           </Col>

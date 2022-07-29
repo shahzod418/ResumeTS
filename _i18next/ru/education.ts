@@ -19,6 +19,11 @@ const education: IEducation = {
         school: 'learn.javascript.ru',
         courses: [
           {
+            id: 'LearnJsTypeScript',
+            name: 'Интенсив по TypeScript',
+            date: 'Июль 2022',
+          },
+          {
             id: 'LearnJsReact',
             name: 'Курс по React',
             date: 'Июнь 2022 - Июль 2022',
