@@ -17,14 +17,14 @@ const Theme = () => {
 
   useEffect(() => {
     if (document.cookie) {
-      dispatch(changeTheme(document.cookie));
+      dispatch(changeTheme(document.cookie.includes('dark') ? 'dark' : 'light'));
     }
   }, []);
 
   useEffect(() => {
     current.style.backgroundColor = background;
     current.id = id;
-    document.cookie = id;
+    document.cookie = `theme="${id}"`;
   }, [id]);
 
   const handleChangeTheme = () => {
