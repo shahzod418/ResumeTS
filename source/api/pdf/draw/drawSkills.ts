@@ -17,8 +17,8 @@ const drawSkills = (page: PDFPage, options: IOptions) => {
   const otherSkills = skills.filter(({ category }) => category === SkillsCategory.Other);
 
   page.drawLine({
-    start: { x: 25, y: height - 505 },
-    end: { x: width - 25, y: height - 505 },
+    start: { x: 25, y: height - 525 },
+    end: { x: width - 25, y: height - 525 },
     thickness: 1,
     color: rgb(0.8, 0.8, 0.8),
     opacity: 0.75,

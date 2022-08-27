@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import useSelector from '../../store/hooks/useSelector';
 import selectTheme from '../../store/modules/theme/selectors';
 import SkillCard from '../SkillCard/SkillCard';
-import ISkill, { ISkillsText } from '../../interfaces/ISkill';
+import ISkill, { ISkillsText, SkillsCategory } from '../../interfaces/ISkill';
 import mappingFilter from '../../api/mappingFilter';
 
 interface SkillsProps {
@@ -13,13 +13,15 @@ interface SkillsProps {
   skillsTexts: ISkillsText;
 }
 
+type SelectCallback = (eventKey: string | null, e: React.SyntheticEvent<unknown>) => void;
+
 const Skills: FC<SkillsProps> = ({ title, skills, skillsTexts }) => {
   const {
     class: { text },
   } = useSelector(selectTheme);
   const [filter, setFilter] = useState<string>('All');
 
-  const handleSelect = (category: any) => {
+  const handleSelect = (category: SkillsCategory) => {
     setFilter(category);
   };
 
@@ -34,7 +36,11 @@ const Skills: FC<SkillsProps> = ({ title, skills, skillsTexts }) => {
         <Col sm={10} className="mx-auto">
           <Container>
             <Row className="mb-3 pb-3 border-bottom border-primary">
-              <Tabs defaultActiveKey="All" variant="pills" onSelect={handleSelect}>
+              <Tabs
+                defaultActiveKey="All"
+                variant="pills"
+                onSelect={handleSelect as SelectCallback}
+              >
                 {Object.keys(mappingFilter).map((category) => (
                   <Tab key={category} eventKey={category} title={category} />
                 ))}

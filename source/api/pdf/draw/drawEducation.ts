@@ -23,8 +23,8 @@ const drawEducation = (page: PDFPage, options: IOptions) => {
     .join('\n')}`;
 
   page.drawLine({
-    start: { x: 25, y: height - 795 },
-    end: { x: width - 25, y: height - 795 },
+    start: { x: 25, y: height - 815 },
+    end: { x: width - 25, y: height - 815 },
     thickness: 1,
     color: rgb(0.8, 0.8, 0.8),
     opacity: 0.75,
@@ -32,12 +32,12 @@ const drawEducation = (page: PDFPage, options: IOptions) => {
 
   page.drawText(educationHigherText, {
     ...options,
-    y: height - 530,
+    y: height - 550,
   });
 
   page.drawText(educationAdditionalText, {
     ...options,
-    y: height - 620,
+    y: height - 640,
   });
 };
 

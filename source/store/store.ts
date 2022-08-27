@@ -5,10 +5,10 @@ import toastReducer from './modules/toast/reducer';
 import IThemeAction from '../interfaces/IThemeAction';
 import IToastAction from '../interfaces/IToastAction';
 
-const rootReducer = (state: IStoreState, action: any) => {
+const rootReducer = (state: IStoreState, action: IThemeAction | IToastAction) => {
   return {
-    theme: themeReducer(state?.theme, action || {}),
-    toast: toastReducer(state?.toast, action || {}),
+    theme: themeReducer(state?.theme, (action as IThemeAction) || {}),
+    toast: toastReducer(state?.toast, (action as IToastAction) || {}),
   };
 };
 

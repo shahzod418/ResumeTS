@@ -57,7 +57,7 @@ const drawTitles = (pages: PDFPage[], options: IOptions, customFont: ICustomFont
   pages[0].drawText(i18n.t('education.title'), {
     ...options,
     x: 35,
-    y: height - 530,
+    y: height - 550,
     size: 14,
     font: customFont.RobotoItalicFont,
   });

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from 'react';
 import { nanoid } from 'nanoid';
 import StoreContext from '../context/StoreContext';
 
@@ -10,7 +10,7 @@ const useSelector = (selector: Function) => {
   useEffect(() => {
     store.subscribe(componentId.current, (state: object) => setValue(selector(state)));
 
-    return () => store.unsubscribe(componentId);
+    return () => store.unsubscribe(componentId.current);
   }, []);
 
   return value;

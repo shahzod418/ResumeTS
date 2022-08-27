@@ -8,7 +8,8 @@
     "build": "webpack",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md|html)\""
+    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md|html)\"",
+    "type": "tsc --noEmit"
   },
   "husky": {
     "hooks": {

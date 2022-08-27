@@ -4,7 +4,7 @@ import useSelector from '../store/hooks/useSelector';
 import selectTheme from '../store/modules/theme/selectors';
 
 const LazyImage: FC<{ name: string }> = ({ name }) => {
-  const [img, setImg] = useState<any>();
+  const [img, setImg] = useState<ImportAssertions>();
   const { spinner } = useSelector(selectTheme);
 
   useEffect(() => {

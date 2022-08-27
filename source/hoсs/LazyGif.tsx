@@ -4,7 +4,7 @@ import useSelector from '../store/hooks/useSelector';
 import selectTheme from '../store/modules/theme/selectors';
 
 const LazyGif: FC<{ name: string }> = ({ name }) => {
-  const [gif, setGif] = useState<any>();
+  const [gif, setGif] = useState<ImportAssertions>();
   const { spinner } = useSelector(selectTheme);
 
   useEffect(() => {

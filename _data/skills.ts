@@ -151,6 +151,46 @@ const skills: ISkill[] = [
     id: 'Vercel',
     logo: 'vercel.svg',
   },
+  {
+    category: SkillsCategory.Backend,
+    id: 'Express',
+    logo: 'express.svg',
+  },
+  {
+    category: SkillsCategory.Backend,
+    id: 'Sequelize',
+    logo: 'sequelize.svg',
+  },
+  {
+    category: SkillsCategory.Backend,
+    id: 'MySQL',
+    logo: 'mysql.svg',
+  },
+  {
+    category: SkillsCategory.Backend,
+    id: 'Docker',
+    logo: 'docker.svg',
+  },
+  {
+    category: SkillsCategory.Testing,
+    id: 'Postman',
+    logo: 'postman.svg',
+  },
+  {
+    category: SkillsCategory.Other,
+    id: 'GitLab',
+    logo: 'gitlab.svg',
+  },
+  {
+    category: SkillsCategory.Other,
+    id: 'Jira',
+    logo: 'jira.svg',
+  },
+  {
+    category: SkillsCategory.Other,
+    id: 'VSCode',
+    logo: 'vscode.svg',
+  },
 ];
 
 export default skills;

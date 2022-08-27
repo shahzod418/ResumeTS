@@ -42,6 +42,14 @@ const skills: ISkillsText = {
   NPM: 'Basic package installation and removal operations. Configuring simple scripts',
   Arch: "The second Linux distribution I use. It's quite rare that I prefer it",
   Pug: 'I rarely use this preprocessor to simplify HTML since I mostly write React projects',
+  VSCode: 'Additional text editor for those cases when Vim is not convenient',
+  Sequelize: 'The ORM I use to work with databases',
+  Postman: 'The main program I use to test HTTP requests',
+  MySQL: 'One of the database management systems I use',
+  Jira: 'I use the Agile methodology when developing a product in a large team',
+  GitLab: 'The main repository management system I use for team-based development is',
+  Express: 'The framework on which I write Node.JS server applications',
+  Docker: 'I use it in the development of large products',
 };
 
 export default skills;

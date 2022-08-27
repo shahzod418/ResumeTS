@@ -1,13 +1,15 @@
 import IStoreState from '../../interfaces/IStoreState';
 
-class Store {
+export class Store {
   private static instance: Store;
 
   rootReducer;
 
   state: IStoreState | undefined;
 
-  subscribers = {};
+  subscribers: {
+    [key: string]: Function;
+  } = {};
 
   private constructor(rootReducer: Function) {
     this.rootReducer = rootReducer;
@@ -22,12 +24,12 @@ class Store {
     return Store.instance;
   }
 
-  public subscribe<KeyType extends keyof typeof this.subscribers>(key: KeyType, callback) {
+  public subscribe(key: string, callback: Function) {
     this.subscribers[key] = callback;
     this.subscribers[key](this.state);
   }
 
-  public unsubscribe(key: keyof typeof this.subscribers) {
+  public unsubscribe(key: string) {
     delete this.subscribers[key];
   }
 
