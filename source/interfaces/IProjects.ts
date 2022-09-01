@@ -1,5 +1,14 @@
+export enum ProjectsId {
+  Resume = 'resume',
+  MultilingualClicker = 'multilingualClicker',
+  ContractBuilder = 'contractBuilder',
+  BrainGame = 'brainGame',
+  MusicBox = 'musicBox',
+  CognitiveDistortions = 'cognitiveDistortions',
+}
+
 export interface IProject {
-  id: string;
+  id: ProjectsId;
   title: string;
   shortDescription: string;
   stack: string;

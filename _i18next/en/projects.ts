@@ -1,38 +1,38 @@
-import IProjects from '../../source/interfaces/IProjects';
+import IProjects, { ProjectsId } from '../../source/interfaces/IProjects';
 import resume from './markdown/resume.md';
 import multilingualClicker from './markdown/multilingualClicker.md';
 import contractBuilder from './markdown/contractBuilder.md';
 import brainGame from './markdown/brainGame.md';
 import cognitiveDistortions from './markdown/cognitiveDistortions.md';
 import musicBox from './markdown/musicBox.md';
+import stacks from '../../_data/stacks';
+
+const getStack = (key: ProjectsId) => `Technology Stack: ${stacks[key]}`;
 
 const projects: IProjects[] = [
   {
     type: 'Frontend',
     projects: [
       {
-        id: 'resume',
+        id: ProjectsId.Resume,
         title: 'CV',
         shortDescription: 'My CV, written using the React framework in TypeScript',
-        stack:
-          'Technology Stack: React, React Hooks, i18next, html2pdf.js, vanta.js, Bootstrap, Vercel, Webpack, Husky, Babel, PostCSS, EsLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
+        stack: getStack(ProjectsId.Resume),
         description: resume,
       },
       {
-        id: 'multilingualClicker',
+        id: ProjectsId.MultilingualClicker,
         title: 'Multilingual clicker',
         shortDescription:
           'Frontend application written in pure JavaScript using the i18next internationalisation library',
-        stack:
-          'Technology Stack: JavaScript, i18next, Yup, onChange, Lodash, Bootstrap, Webpack, Babel, PostCSS, Vercel, ESLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
+        stack: getStack(ProjectsId.MultilingualClicker),
         description: multilingualClicker,
       },
       {
-        id: 'contractBuilder',
+        id: ProjectsId.ContractBuilder,
         title: 'Contract builder',
         shortDescription: 'Frontend application on Svelte framework',
-        stack:
-          'Technology Stack: Svelte, JavaScript, Bootstrap, Webpack, Babel, PostCSS, Vercel, Prettier, Git, GitHub',
+        stack: getStack(ProjectsId.ContractBuilder),
         description: contractBuilder,
       },
     ],
@@ -41,12 +41,11 @@ const projects: IProjects[] = [
     type: 'Backend',
     projects: [
       {
-        id: 'brainGame',
+        id: ProjectsId.BrainGame,
         title: 'Brain game',
         shortDescription:
           'An CLI application written in TypeScript using the Node.JS module Commander.JS and the readline-sync console library',
-        stack:
-          'Technology Stack: TypeScript, Node.js, Commander.JS, Jest, npm, ESLint (airbnb), Prettier, Git, GitHub, GitHub Actions (CI), CodeClimate',
+        stack: getStack(ProjectsId.BrainGame),
         description: brainGame,
       },
     ],
@@ -55,18 +54,17 @@ const projects: IProjects[] = [
     type: 'Layout',
     projects: [
       {
-        id: 'musicBox',
+        id: ProjectsId.MusicBox,
         title: 'Music Box',
         shortDescription: 'Music Box website layout',
-        stack: 'Technology Stack: HTML, CSS, Flex, Grid, SASS, npm, Git, Surge',
+        stack: getStack(ProjectsId.MusicBox),
         description: musicBox,
       },
       {
-        id: 'cognitiveDistortions',
+        id: ProjectsId.CognitiveDistortions,
         title: 'Cognitive distortions',
         shortDescription: "Landing on 'Cognitive Distortions in Programming'",
-        stack:
-          'Technology Stack: HTML, CSS, Flex, CSS Animation, CSS Transform, JavaScript (DOM API), npm, Git',
+        stack: getStack(ProjectsId.CognitiveDistortions),
         description: cognitiveDistortions,
       },
     ],
